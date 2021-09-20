@@ -4,8 +4,8 @@ Our project involves a cybersecurity themed simulation game based in Unity that 
 
 
 Instructions on how to build and execute the code:  
-Download the repo’s main branch from https://github.com/CSC4790-Fall2021-Org/CyberSimulation/  
-Download Unity Hub and Unity game engine 2020.2.5f1  
-Click on the "Add" button in Unity hub and naviagate to the folder you downloaded  
-Double click on the project name to launch it  
+    * Download the repo’s main branch from https://github.com/CSC4790-Fall2021-Org/CyberSimulation/  
+    * Download Unity Hub and Unity game engine 2020.2.5f1  
+    * Click on the "Add" button in Unity Hub and naviagate to the folder you downloaded  
+    * Double click on the project name to launch it  
 
