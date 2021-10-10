@@ -34,10 +34,12 @@ public class ChatManager : MonoBehaviour
     {
         verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
-        initialChatTexts = new string[]
+        initialChatTexts = new string[GameObject.Find("System").GetComponent<CSVScript>().description.Length];
+        for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().description.Length; i++)
         {
-            "I received an email message that looked very similar to Gmail, urging me to update my security credentials. Once I clicked on the link, I was prompted to input my username and password, but the format of the website looked different from the normal Gmail interface."
-        };
+            initialChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().description[i];
+            Debug.Log("swag" + initialChatTexts[i]);
+        }
 
         choiceAChatTexts = new string[]
         {

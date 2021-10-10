@@ -13,6 +13,7 @@ public class CardZoom : MonoBehaviour
     public void Awake()
     {
         Canvas = GameObject.Find("Canvas");
+        
     }
 
     public void OnHoverEnter()
