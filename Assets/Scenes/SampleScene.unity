@@ -392,7 +392,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10, y: -83}
+  m_AnchoredPosition: {x: -11, y: -73}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &102625645
@@ -428,7 +428,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '$100,000
+  m_Text: 'Money here
 
 '
 --- !u!222 &102625646
@@ -624,6 +624,7 @@ GameObject:
   m_Component:
   - component: {fileID: 125257463}
   - component: {fileID: 125257464}
+  - component: {fileID: 125257465}
   m_Layer: 0
   m_Name: Card Template
   m_TagString: Untagged
@@ -666,6 +667,19 @@ MonoBehaviour:
   ciaText: {fileID: 169564131}
   artworkImage: {fileID: 1094084959}
   moneyValue: {fileID: 1535885510}
+--- !u!114 &125257465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125257462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c20dc5a355b484505b3d6bf6d43dae9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0
 --- !u!1 &160673999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6379737492296036061, guid: 11c3ec0da51f94cf79498b2566f0b705,

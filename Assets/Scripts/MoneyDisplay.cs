@@ -12,7 +12,8 @@ public class MoneyDisplay : MonoBehaviour
 
     void Start () {
         //this.SetMoney("100000");
-        GameObject.Find("Money").GetComponent<Text>();
+        GameObject.Find("Money").GetComponent<Text>().text = "33";
+        //money.Text = GameObject.Find("Money").GetComponent<Text>();
     }
 
     public string GetMoney (MoneyDisplay money)
