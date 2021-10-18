@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ClickCard : MonoBehaviour
 {
     public int money;
+    String temp;
     //public String strMoney = money.toString();
     //public int intMoney = int.Parse(strMoney);
     
@@ -15,6 +16,9 @@ public class ClickCard : MonoBehaviour
     void Start()
     {
         money = 100;
+        //temp = GameObject.Find("Money").GetComponent<Text>().text;
+        //Int32.TryParse(temp, out money);
+        // String f =GameObject.Find("MoneyText").GetComponent<MoneyDisplay>().temp();
     }
 
     // Update is called once per frame
