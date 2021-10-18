@@ -38,7 +38,7 @@ public class ChatManager : MonoBehaviour
         for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().description.Length; i++)
         {
             initialChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().description[i];
-            Debug.Log("swag" + initialChatTexts[i]);
+            Debug.Log("swa22g" + initialChatTexts[i]);
         }
 
         choiceAChatTexts = new string[]

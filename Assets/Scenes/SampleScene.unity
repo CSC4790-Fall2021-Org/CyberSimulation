@@ -145,6 +145,7 @@ MonoBehaviour:
   TextAssetData: {fileID: 4900000, guid: 81993f18e38ad5447b100b68665646de, type: 3}
   description: []
   pool: 
+  chat: []
   eventList1:
     Loader: []
 --- !u!1001 &90373270
@@ -367,6 +368,7 @@ GameObject:
   - component: {fileID: 102625644}
   - component: {fileID: 102625646}
   - component: {fileID: 102625645}
+  - component: {fileID: 102625647}
   m_Layer: 5
   m_Name: Money
   m_TagString: Untagged
@@ -437,6 +439,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102625643}
   m_CullTransparentMesh: 1
+--- !u!114 &102625647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102625643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d4d0d12096747ec9c710fcaa47c398, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: {fileID: 1606317015}
+  temp: 22
 --- !u!1001 &123818896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2073,6 +2089,7 @@ MonoBehaviour:
   TextAssetData: {fileID: 4900000, guid: 81993f18e38ad5447b100b68665646de, type: 3}
   description: []
   pool: 
+  chat: []
   eventList1:
     Loader: []
 --- !u!114 &954105379 stripped
@@ -3278,16 +3295,21 @@ MonoBehaviour:
   TextAssetData: {fileID: 4900000, guid: 81993f18e38ad5447b100b68665646de, type: 3}
   description: []
   pool: 
+  chat: []
   eventList1:
     Loader:
     - Description: 
       pool: 0
+      chat: 
     - Description: 
       pool: 0
+      chat: 
     - Description: 
       pool: 0
+      chat: 
     - Description: 
       pool: 0
+      chat: 
 --- !u!4 &2007102392
 Transform:
   m_ObjectHideFlags: 0
