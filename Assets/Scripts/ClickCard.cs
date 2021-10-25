@@ -16,6 +16,7 @@ public class ClickCard : MonoBehaviour
     void Start()
     {
         money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+        Debug.Log("Money value: " + money);
         moneyText = GameObject.Find("Money").GetComponent<Text>();
     }
 
@@ -26,8 +27,7 @@ public class ClickCard : MonoBehaviour
         {
             money = money - 10;
 
-            Debug.Log("moneyText: " + moneyText);
-            Debug.Log("is noney null: " + moneyText == null);
+            //Debug.Log("moneyText: " + moneyText);
             
             moneyText.text = money.ToString();
 
