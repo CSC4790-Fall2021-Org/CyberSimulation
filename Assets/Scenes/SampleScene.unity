@@ -392,8 +392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -73}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 37, y: -0.000032425}
+  m_SizeDelta: {x: 215.9299, y: 68.5723}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &102625645
 MonoBehaviour:
@@ -408,7 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.12415449, g: 0.8490566, b: 0.16966465, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -416,11 +416,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_Font: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75, type: 3}
+    m_FontSize: 36
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -452,7 +452,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: {fileID: 1606317015}
-  temp: 22
+  moneyInt: 0
+  temp: 0
+  dollars: 0
 --- !u!1001 &123818896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -680,6 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 0
+  moneyText: {fileID: 0}
 --- !u!1 &160673999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6379737492296036061, guid: 11c3ec0da51f94cf79498b2566f0b705,
@@ -699,7 +702,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: {fileID: 102625645}
+  moneyInt: 0
   temp: 
+  dollars: 0
 --- !u!1 &169564129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,12 +1453,12 @@ PrefabInstance:
     - target: {fileID: 3610362745958338648, guid: a4aa81a0618794b8ca243a49f7729341,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 300
+      value: 113
       objectReference: {fileID: 0}
     - target: {fileID: 3610362745958338648, guid: a4aa81a0618794b8ca243a49f7729341,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -29.632812
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 3610362745958338648, guid: a4aa81a0618794b8ca243a49f7729341,
         type: 3}
@@ -2236,6 +2241,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6379737492296036035, guid: 11c3ec0da51f94cf79498b2566f0b705,
+        type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6379737492296036061, guid: 11c3ec0da51f94cf79498b2566f0b705,
         type: 3}
       propertyPath: m_Name
@@ -2338,6 +2348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 100
+  moneyText: {fileID: 0}
 --- !u!1 &1180754071
 GameObject:
   m_ObjectHideFlags: 0
