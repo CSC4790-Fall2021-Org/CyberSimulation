@@ -38,6 +38,6 @@ public class MoneyDisplay : MonoBehaviour
 
     public void Print ()
 	{
-		Debug.Log("dollars: " + dollars);
+		Debug.Log("Set money to 100. dollars: " + dollars);
 	}
 }

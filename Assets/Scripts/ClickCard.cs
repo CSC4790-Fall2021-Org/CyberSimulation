@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class ClickCard : MonoBehaviour
 {
     public int money;
-    String temp;
-
     public Text moneyText;
+
+    public int cardMoney;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,7 @@ public class ClickCard : MonoBehaviour
         money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
         Debug.Log("Money value: " + money);
         moneyText = GameObject.Find("Money").GetComponent<Text>();
+
     }
 
     // Update is called once per frame
@@ -25,7 +26,18 @@ public class ClickCard : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            money = money - 10;
+            /*
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+         
+            if (Physics.Raycast(ray, out hit))
+            {
+                Debug.Log("this is the object" + hit.transform.gameObject.name);
+            }
+            */
+
+            cardMoney = int.Parse(GameObject.Find("Money Value").GetComponent<Text>().text);
+            money = money - cardMoney;
 
             //Debug.Log("moneyText: " + moneyText);
             
