@@ -9,16 +9,15 @@ public class ClickCard : MonoBehaviour
 {
     public int money;
     String temp;
-    //public String strMoney = money.toString();
-    //public int intMoney = int.Parse(strMoney);
+
+    public Text moneyText;
     
     // Start is called before the first frame update
     void Start()
     {
-        money = 100;
-        //temp = GameObject.Find("Money").GetComponent<Text>().text;
-        //Int32.TryParse(temp, out money);
-        // String f =GameObject.Find("MoneyText").GetComponent<MoneyDisplay>().temp();
+        money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+        Debug.Log("Money value: " + money);
+        moneyText = GameObject.Find("Money").GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -26,8 +25,13 @@ public class ClickCard : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0))
         {
-            //money.text = (intMoney - 10).toString();
             money = money - 10;
+
+            //Debug.Log("moneyText: " + moneyText);
+            
+            moneyText.text = money.ToString();
+
+            GameObject.Find("Money").GetComponent<Text>().text = moneyText.text;
         }
     }
 }
