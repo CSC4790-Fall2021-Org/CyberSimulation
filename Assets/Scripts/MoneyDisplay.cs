@@ -19,7 +19,7 @@ public class MoneyDisplay : MonoBehaviour
         //dollars = GameObject.Find("Money Int").GetComponent<int>();
 
         dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
-        Print();
+        //Print();
  
         //GameObject.Find("Money Int").GetComponent<int>() = 100;
 
