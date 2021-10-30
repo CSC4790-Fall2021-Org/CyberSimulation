@@ -28,21 +28,21 @@ public class CSVScript : MonoBehaviour
         readCSV();
     }
 void readCSV(){
-
+        int l = 3;
 string[] data  = TextAssetData.text.Split(new string[] {",","\n"},StringSplitOptions.None);
-int tableSize = data.Length/2-1;
+        int tableSize = data.Length /l -1;
 eventList1.Loader = new loader[tableSize];
         description = new string[tableSize];
         pool = new int[tableSize];
         chat = new string[tableSize];
         for (int i =0;i<tableSize;i++){
     eventList1.Loader[i]=new loader(); 
-    eventList1.Loader[i].Description = data[3*(i+1)];
+    eventList1.Loader[i].Description = data[l*(i+1)];
             
 
            // Debug.Log(eventList1.Loader[i].Description);
-            eventList1.Loader[i].pool= int.Parse(data[3*(i+1)+1]);
-            eventList1.Loader[i].chat = data[3 * (i + 1) + 2];
+            eventList1.Loader[i].pool= int.Parse(data[l*(i+1)+1]);
+            eventList1.Loader[i].chat = data[l * (i + 1) + 2];
             //   description[i] = eventList1.Loader[i].Description;
 
 
