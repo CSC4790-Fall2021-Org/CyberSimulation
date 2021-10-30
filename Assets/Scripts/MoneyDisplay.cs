@@ -8,21 +8,11 @@ using UnityEngine.UI;
 public class MoneyDisplay : MonoBehaviour
 {
     public Text money;
-    public int moneyInt;
     public string temp;  
-
-    public int dollars;
 
     void Start () {
         //this.SetMoney("100000");
-        GameObject.Find("Money").GetComponent<Text>().text = "100";
-        //dollars = GameObject.Find("Money Int").GetComponent<int>();
-
-        dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
-        //Print();
- 
-        //GameObject.Find("Money Int").GetComponent<int>() = 100;
-
+        GameObject.Find("Money").GetComponent<Text>().text = "33";
         //money.Text = GameObject.Find("Money").GetComponent<Text>();
     }
 
@@ -35,9 +25,4 @@ public class MoneyDisplay : MonoBehaviour
     {
         this.temp = money;
     }
-
-    public void Print ()
-	{
-		Debug.Log("Set money to 100. dollars: " + dollars);
-	}
 }
