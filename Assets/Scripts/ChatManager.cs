@@ -11,7 +11,7 @@ public class ChatManager : MonoBehaviour
     [SerializeField] private GameObject chatBarPrefab;
     [SerializeField] private Color playerChatColor;
     [SerializeField] private Color cpuChatColor;
-    [SerializeField] public bool checkChoice = false;
+
     [SerializeField] private Sprite playerChatBar;
     [SerializeField] private Sprite cpuChatBar;
     [SerializeField] private Canvas chatCanvas;
@@ -19,10 +19,9 @@ public class ChatManager : MonoBehaviour
     [SerializeField] private Text choiceAButtonText;
     [SerializeField] private Text choiceBButtonText;
 
-    private string[] initialChatTexts = new string[1];
+    private string[] initialChatTexts;
     private string[] choiceAChatTexts;
     private string[] choiceBChatTexts;
-    private bool initial = false;
     private string choiceA;
     private string choiceB;
     private int fontSize;
@@ -33,7 +32,6 @@ public class ChatManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
         verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
         initialChatTexts = new string[GameObject.Find("System").GetComponent<CSVScript>().description.Length];
@@ -59,48 +57,12 @@ public class ChatManager : MonoBehaviour
         choiceBButtonText.text = choiceB;
 
         ShowMessages(initialChatTexts, 1);
-        */
     }
-    public void cc()
-    {
-        verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
-        chatCanvas.enabled = false;
-        //initialChatTexts = new string[1];
-        
-        for (int i = 0; i < initialChatTexts.Length; i++)
-        {
-            initialChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().description[EventManage.Instance.getcurrScenario()];
-            Debug.Log("swa22g" + initialChatTexts.Length);
-        }
 
-        choiceAChatTexts = new string[]
-        {
-            "Sounds about right"
-        };
-
-        choiceBChatTexts = new string[]
-        {
-            "Hmm, not sure if it sounds like a mishing attack"
-        };
-
-        choiceA = "Phishing";
-        choiceB = "Mishing";
-        choiceAButtonText.text = choiceA;
-        choiceBButtonText.text = choiceB;
-        if (initial == false)
-        {
-            ShowMessages(initialChatTexts, 1);
-            initial = true;
-        }
-    }
     // Update is called once per frame
     void Update()
     {
-        if(checkChoice==true && true)
-        {
-            //initial = false;
-            //checkChoice = false;
-        }
+
     }
 
     void ShowMessages(string[] data, int side)
@@ -189,22 +151,13 @@ public class ChatManager : MonoBehaviour
 
     public void ChoiceA()
     {
-        if (checkChoice == false)
-        {
-            StartCoroutine(ShowMessageCoroutine(choiceA, 0));
-            ShowMessages(choiceAChatTexts, 1);
-            checkChoice = true;
-        }
+        StartCoroutine(ShowMessageCoroutine(choiceA, 0));
+        ShowMessages(choiceAChatTexts, 1);
     }
 
     public void ChoiceB()
     {
-        if (checkChoice == false)
-        {
-            StartCoroutine(ShowMessageCoroutine(choiceB, 0));
-            ShowMessages(choiceBChatTexts, 1);
-            checkChoice = true;
-        }
+        StartCoroutine(ShowMessageCoroutine(choiceB, 0));
+        ShowMessages(choiceBChatTexts, 1);
     }
-    
 }
