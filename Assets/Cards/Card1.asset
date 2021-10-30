@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: 2FA
   ciaAspect: C
   artwork: {fileID: 21300000, guid: 8fa392759a34647d79a044c3b260680f, type: 3}
-  moneyValue: 1
+  moneyValue: 55
