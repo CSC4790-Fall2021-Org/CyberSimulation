@@ -10,11 +10,13 @@ public class EventManage : MonoBehaviour
    List<int> scenarios = new List<int>();
     [SerializeField]
     List<int> scenariosTemp = new List<int>();
-    public int currScenario;
-  //  ArrayList scenarioArray = new ArrayList();
+    public int currScenario = 1;
+   
+    //  ArrayList scenarioArray = new ArrayList();
     // Start is called before the first frame update
     void Start()
     {
+      
         int l = GameObject.Find("System").GetComponent<CSVScript>().pool.Length;
         scenarios = GameObject.Find("System").GetComponent<CSVScript>().pool.ToList();
       //  scenarioArray = new ArrayList(scenarios);
@@ -26,7 +28,8 @@ public class EventManage : MonoBehaviour
             scenariosTemp.Add(tempScene);
             scenarios.Remove(tempScene);
             Debug.Log(tempScene);
-            currScenario = tempScene;
+        
+            
             
         }
     }
@@ -51,10 +54,18 @@ public class EventManage : MonoBehaviour
     public int getScenario()
     {
 
-        return currScenario;
+        return scenariosTemp[currScenario];
     }
     public int getIndexOfScenario()
     {
         return scenariosTemp.IndexOf(currScenario);
+    }
+    public void incrementScenario()
+    {
+        currScenario++;
+    }
+    public int getcurrScenario()
+    {
+        return currScenario;
     }
 }

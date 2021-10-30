@@ -19,9 +19,10 @@ public class ChatManager : MonoBehaviour
     [SerializeField] private Text choiceAButtonText;
     [SerializeField] private Text choiceBButtonText;
 
-    private string[] initialChatTexts;
+    private string[] initialChatTexts = new string[1];
     private string[] choiceAChatTexts;
     private string[] choiceBChatTexts;
+    private bool initial = false;
     private string choiceA;
     private string choiceB;
     private int fontSize;
@@ -64,11 +65,12 @@ public class ChatManager : MonoBehaviour
     {
         verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
-        initialChatTexts = new string[GameObject.Find("System").GetComponent<CSVScript>().description.Length];
-        for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().description.Length; i++)
+        //initialChatTexts = new string[1];
+        
+        for (int i = 0; i < initialChatTexts.Length; i++)
         {
-            initialChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().description[i];
-            Debug.Log("swa22g" + initialChatTexts[i]);
+            initialChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().description[EventManage.Instance.getcurrScenario()];
+            Debug.Log("swa22g" + initialChatTexts.Length);
         }
 
         choiceAChatTexts = new string[]
@@ -85,15 +87,19 @@ public class ChatManager : MonoBehaviour
         choiceB = "Mishing";
         choiceAButtonText.text = choiceA;
         choiceBButtonText.text = choiceB;
-
-        ShowMessages(initialChatTexts, 1);
+        if (initial == false)
+        {
+            ShowMessages(initialChatTexts, 1);
+            initial = true;
+        }
     }
     // Update is called once per frame
     void Update()
     {
         if(checkChoice==true && true)
         {
-
+            //initial = false;
+            //checkChoice = false;
         }
     }
 

@@ -21,11 +21,11 @@ public class NotificationsManager : MonoBehaviour
     }
     public void StartNotifications (Notifications dialogue)
     {
-        EventManage.Instance.getScenario();
+       int scenario =  EventManage.Instance.getScenario();
         dialogue.sentence = new string[GameObject.Find("System").GetComponent<CSVScript>().description.Length];
         for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().description.Length; i++)
         {
-            dialogue.sentence[i] = GameObject.Find("System").GetComponent<CSVScript>().description[EventManage.Instance.getIndexOfScenario()];
+            dialogue.sentence[i] = GameObject.Find("System").GetComponent<CSVScript>().description[EventManage.Instance.getcurrScenario()];
             
             Debug.Log("swag" + dialogue.sentence[i]);
         }
