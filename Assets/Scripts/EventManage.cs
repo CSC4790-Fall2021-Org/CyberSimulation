@@ -70,7 +70,7 @@ public class EventManage : MonoBehaviour
     }
     public bool nextRound()
     {
-        bool temp = GameObject.Find("Chat").GetComponent<ChatManager>().checkChoice;
+        bool temp = GameObject.Find("ChatManager").GetComponent<ChatManager>().checkChoice;
         if (temp == true)
         {
             return true;

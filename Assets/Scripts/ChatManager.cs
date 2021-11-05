@@ -24,6 +24,7 @@ public class ChatManager : MonoBehaviour
     private string[] choiceBChatTexts;
     private bool initial = false;
     private string choiceA;
+    public string correctChoice = "";
     private string choiceB;
     private int fontSize;
     private string lastUser;
@@ -63,12 +64,19 @@ public class ChatManager : MonoBehaviour
     }
     public void cc()
     {
+        if (checkChoice == true && GameObject.Find("EndRound").GetComponent<OpenSystemMenuV2>().ended == true)
+        {
+            initial = false;
+            checkChoice = false;
+            correctChoice = "";
+        }
+
         verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
         //initialChatTexts = new string[1];
-        
         for (int i = 0; i < initialChatTexts.Length; i++)
         {
+            
             initialChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().description[EventManage.Instance.getcurrScenario()];
             Debug.Log("swa22g" + initialChatTexts.Length);
         }
@@ -96,11 +104,10 @@ public class ChatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(checkChoice==true && true)
-        {
-            //initial = false;
-            //checkChoice = false;
-        }
+       
+
+            
+
     }
 
     void ShowMessages(string[] data, int side)
@@ -193,7 +200,9 @@ public class ChatManager : MonoBehaviour
         {
             StartCoroutine(ShowMessageCoroutine(choiceA, 0));
             ShowMessages(choiceAChatTexts, 1);
+
             checkChoice = true;
+            Debug.Log("checkchoice = " + checkChoice);
         }
     }
 
@@ -204,6 +213,7 @@ public class ChatManager : MonoBehaviour
             StartCoroutine(ShowMessageCoroutine(choiceB, 0));
             ShowMessages(choiceBChatTexts, 1);
             checkChoice = true;
+            Debug.Log("checkchoice = " + checkChoice);
         }
     }
     

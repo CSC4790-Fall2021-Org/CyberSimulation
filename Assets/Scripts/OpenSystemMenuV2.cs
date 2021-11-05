@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class OpenSystemMenuV2 : MonoBehaviour
 {
-    public EventManage managetemp;
+    
     // Start is called before the first frame update
     public Canvas canvas;
     public bool a = false;
     public bool b = false;
+    public bool ended = false;
     public void popup()
     {  
 
         if (a == false&&EventManage.Instance.nextRound()==true)
         {
             a = true;
+            ended = true;
             canvas.enabled = true;
+            EventManage.Instance.incrementScenario();
 
         }
         else if (a == true)
