@@ -68,4 +68,17 @@ public class EventManage : MonoBehaviour
     {
         return currScenario;
     }
+    public bool nextRound()
+    {
+        bool temp = GameObject.Find("Chat").GetComponent<ChatManager>().checkChoice;
+        if (temp == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+   
+    }
 }
