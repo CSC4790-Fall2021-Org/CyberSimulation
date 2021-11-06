@@ -34,45 +34,49 @@ public class ClickCard : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            /*
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-         
-            if (Physics.Raycast(ray, out hit))
-            {
-                Debug.Log("this is the object" + hit.transform.gameObject.name);
-            }
-            */
+            GameObject drawCardsButton = GameObject.Find("Draw Cards Button");
 
             GameObject originalGameObject = GameObject.Find("PlayerArea");
-            GameObject child1 = originalGameObject.transform.GetChild(0).gameObject;
-            GameObject child2 = originalGameObject.transform.GetChild(1).gameObject;
-            GameObject child3 = originalGameObject.transform.GetChild(2).gameObject;
-            GameObject child4 = originalGameObject.transform.GetChild(3).gameObject;
-            GameObject child5 = originalGameObject.transform.GetChild(4).gameObject;
+            GameObject child1 = drawCardsButton.GetComponent<DrawCardsV2>().child1;
+            GameObject child2 = drawCardsButton.GetComponent<DrawCardsV2>().child2;
+            GameObject child3 = drawCardsButton.GetComponent<DrawCardsV2>().child3;
+            GameObject child4 = drawCardsButton.GetComponent<DrawCardsV2>().child4;
+            GameObject child5 = drawCardsButton.GetComponent<DrawCardsV2>().child5;
 
-            RectTransform targetRect1 = child1.GetComponent<RectTransform>();
-            RectTransform targetRect2 = child2.GetComponent<RectTransform>();
-            RectTransform targetRect3 = child3.GetComponent<RectTransform>();
-            RectTransform targetRect4 = child4.GetComponent<RectTransform>();
-            RectTransform targetRect5 = child5.GetComponent<RectTransform>();
+            RectTransform targetRect1 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect1;
+            RectTransform targetRect2 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect2;
+            RectTransform targetRect3 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect3;
+            RectTransform targetRect4 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect4;
+            RectTransform targetRect5 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect5;
 
             //card 1
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect1, mousePos))
             {
-                Debug.Log("inside card 1");
+                //Debug.Log("inside card 1");
                 cardMoney = int.Parse(child1.GetComponent<CardDisplay>().moneyValue.text);
+
+                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child1.GetComponent<CardDisplay>().nameText.text);
+                Destroy(child1);
+                child1.transform.SetParent(null);  
+
+                drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
                 money = money - cardMoney;
                 moneyText.text = money.ToString();
                 GameObject.Find("Money").GetComponent<Text>().text = moneyText.text;
             }
  
-             //card 2
+            //card 2
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect2, mousePos))
             {
-                Debug.Log("inside card 2");
+                //Debug.Log("inside card 2");
                 cardMoney = int.Parse(child2.GetComponent<CardDisplay>().moneyValue.text);
+
+                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child2.GetComponent<CardDisplay>().nameText.text);
+                Destroy(child2);
+                child2.transform.SetParent(null);  
+
+                drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
                 money = money - cardMoney;
                 moneyText.text = money.ToString();
@@ -82,8 +86,14 @@ public class ClickCard : MonoBehaviour
             //card 3
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect3, mousePos))
             {
-                Debug.Log("inside card 3");
+                //Debug.Log("inside card 3");
                 cardMoney = int.Parse(child3.GetComponent<CardDisplay>().moneyValue.text);
+
+                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child3.GetComponent<CardDisplay>().nameText.text);
+                Destroy(child3);
+                child3.transform.SetParent(null);  
+
+                drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
                 money = money - cardMoney;
                 moneyText.text = money.ToString();
@@ -93,8 +103,14 @@ public class ClickCard : MonoBehaviour
             //card 4
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect4, mousePos))
             {
-                Debug.Log("inside card 4");
+                //Debug.Log("inside card 4");
                 cardMoney = int.Parse(child4.GetComponent<CardDisplay>().moneyValue.text);
+
+                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child4.GetComponent<CardDisplay>().nameText.text);
+                Destroy(child4);
+                child4.transform.SetParent(null);  
+
+                drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
                 money = money - cardMoney;
                 moneyText.text = money.ToString();
@@ -104,8 +120,14 @@ public class ClickCard : MonoBehaviour
             //card 5
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect5, mousePos))
             {
-                Debug.Log("inside card 5");
+                //Debug.Log("inside card 5");
                 cardMoney = int.Parse(child5.GetComponent<CardDisplay>().moneyValue.text);
+
+                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child5.GetComponent<CardDisplay>().nameText.text);
+                Destroy(child5);
+                child5.transform.SetParent(null);  
+
+                drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
                 money = money - cardMoney;
                 moneyText.text = money.ToString();

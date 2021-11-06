@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DrawCardsV2 : MonoBehaviour
 {
+    public bool canGetCards;
+
     public GameObject Card1;
     public GameObject Card2;
     public GameObject Card3;
@@ -18,9 +20,28 @@ public class DrawCardsV2 : MonoBehaviour
 
     public GameObject tempCard;
 
-    int currentCards = 0;
+    public int currentCards = 0;
 
-    List<GameObject> cards = new List<GameObject>();
+    public List<GameObject> cards = new List<GameObject>();
+
+    public List<string> usedCardsNames = new List<string>();
+    public List<GameObject> usedCards = new List<GameObject>();
+
+    //public List<GameObject> childObjects = new List<GameObject>();
+
+    GameObject originalGameObject;
+
+    public GameObject child1;
+    public GameObject child2;
+    public GameObject child3;
+    public GameObject child4;
+    public GameObject child5;
+
+    public RectTransform targetRect1;
+    public RectTransform targetRect2;
+    public RectTransform targetRect3;
+    public RectTransform targetRect4;
+    public RectTransform targetRect5;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +56,13 @@ public class DrawCardsV2 : MonoBehaviour
         cards.Add(Card8);
         cards.Add(Card9);
         cards.Add(Card10);
+
+        originalGameObject = GameObject.Find("PlayerArea");
+    }
+
+    public void NewDay()
+    {
+        canGetCards = true;
     }
 
     // Update is called once per frame
@@ -48,8 +76,9 @@ public class DrawCardsV2 : MonoBehaviour
         cb1.transform.SetParent(c1.transform, false);
         */
                 
-        if(currentCards < 5)
+        if(currentCards < 5 && canGetCards)
         {
+            canGetCards = false;
             for (var i = 0; i < 5; i++)
             {
                 currentCards += 1;
@@ -62,28 +91,103 @@ public class DrawCardsV2 : MonoBehaviour
                 cards.Remove(tempCard);
                 //can store this tempCard in an array to add it back into the pool of selectable cards at a later time
             }
+
+            child1 = originalGameObject.transform.GetChild(0).gameObject;
+            child2 = originalGameObject.transform.GetChild(1).gameObject;
+            child3 = originalGameObject.transform.GetChild(2).gameObject;
+            child4 = originalGameObject.transform.GetChild(3).gameObject;
+            child5 = originalGameObject.transform.GetChild(4).gameObject;
+
+            child1.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            child2.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            child3.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            child4.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            child5.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+
+            child1.SetActive(true);
+            child2.SetActive(true);
+            child3.SetActive(true);
+            child4.SetActive(true);
+            child5.SetActive(true);
+
+            targetRect1 = child1.GetComponent<RectTransform>();
+            targetRect2 = child2.GetComponent<RectTransform>();
+            targetRect3 = child3.GetComponent<RectTransform>();
+            targetRect4 = child4.GetComponent<RectTransform>();
+            targetRect5 = child5.GetComponent<RectTransform>();
         }
     }
 
+/*
+    public static GameObject GetChildWithName<T>(T obj, string name) where T : Component
+         {
+             Transform trans = obj.transform;
+             Transform childTrans = trans.Find(name);
+             
+             if (childTrans != null)
+             {
+                return childTrans.gameObject;
+             }
+ 
+             return null;
+         }
+*/
+
     public void DestroyCards()
     {
+        Debug.Log("Child count:" + originalGameObject.transform.childCount);
+
+        while(originalGameObject.transform.childCount != 0){
+        foreach(Transform child in originalGameObject.transform)
+        {
+            Debug.Log("Child count:" + originalGameObject.transform.childCount);
+            Debug.Log(child.GetComponent<CardDisplay>().nameText.text);
+
+            //usedCardsNames.Add(child.GetComponent<CardDisplay>().nameText.text);
+            cards.Add(child.gameObject);
+            child.SetParent(null);       
+            currentCards--;
+        }
+        }
+
+        
+        /*
+        foreach(Transform child in originalGameObject.transform)
+        {
+            foreach(string str in usedCardsNames)
+            {
+                if(child.GetComponent<CardDisplay>().nameText.text == str)
+                {
+                    Debug.Log("STRING EQUALS CARD 2");
+                }
+            }
+        }
+        
+        
         if(currentCards == 5)
         {
             Debug.Log("within onclick of destroy cards");
-            GameObject originalGameObject = GameObject.Find("PlayerArea");
             GameObject child1 = originalGameObject.transform.GetChild(0).gameObject;
             GameObject child2 = originalGameObject.transform.GetChild(1).gameObject;
             GameObject child3 = originalGameObject.transform.GetChild(2).gameObject;
             GameObject child4 = originalGameObject.transform.GetChild(3).gameObject;
             GameObject child5 = originalGameObject.transform.GetChild(4).gameObject;
 
+            child1.SetActive(false);
+            child2.SetActive(false);
+            child3.SetActive(false);
+            child4.SetActive(false);
+            child5.SetActive(false);
+            
             Destroy(child1);
             Destroy(child2);
             Destroy(child3);
             Destroy(child4);
             Destroy(child5);
+            
 
             currentCards -= 5;
         }
+        */
     }
 }

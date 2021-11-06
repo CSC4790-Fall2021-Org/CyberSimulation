@@ -316,7 +316,7 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 0
   - eventID: 1
     callback:
       m_PersistentCalls:
@@ -332,7 +332,7 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 0
-          m_CallState: 2
+          m_CallState: 0
 --- !u!114 &8048328920065098813
 MonoBehaviour:
   m_ObjectHideFlags: 0
