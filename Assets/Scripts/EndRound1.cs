@@ -17,4 +17,12 @@ public class EndRound1 : MonoBehaviour
     {
         
     }
+<<<<<<< Updated upstream
+=======
+    public void getSumm()
+    {
+        SumText = GameObject.Find("System").GetComponent<CSVScript>().endRoundSum[EventManage.Instance.getcurrScenario()];
+        SummaryText.text = SumText;
+    }
+>>>>>>> Stashed changes
 }

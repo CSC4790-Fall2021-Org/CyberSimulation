@@ -15,11 +15,17 @@ public class EventManage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
         int l = GameObject.Find("System").GetComponent<CSVScript>().pool.Length;
         scenarios = GameObject.Find("System").GetComponent<CSVScript>().pool.ToList();
+=======
+      
+        int l = GameObject.Find("System").GetComponent<CSVScript>().ID.Length;
+        scenarios = GameObject.Find("System").GetComponent<CSVScript>().ID.ToList();
+>>>>>>> Stashed changes
       //  scenarioArray = new ArrayList(scenarios);
         scenariosTemp = new List<int>(scenarios.Count);
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < l; i++)
         {
             
             int tempScene = scenarios[Random.Range(0, scenarios.Count)];

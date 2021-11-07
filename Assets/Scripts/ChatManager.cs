@@ -19,10 +19,21 @@ public class ChatManager : MonoBehaviour
     [SerializeField] private Text choiceAButtonText;
     [SerializeField] private Text choiceBButtonText;
 
+<<<<<<< Updated upstream
     private string[] initialChatTexts;
     private string[] choiceAChatTexts;
     private string[] choiceBChatTexts;
     private string choiceA;
+=======
+    private string[] initialChatTexts = new string[1];
+    private string[] choiceAChatTexts= new string[1];
+    private string[] choiceBChatTexts= new string[1];
+  
+    private bool initial = false;
+    private string choiceA;
+    public string correctChoice = "";
+    public bool choicecorrect = false;
+>>>>>>> Stashed changes
     private string choiceB;
     private int fontSize;
     private string lastUser;
@@ -62,6 +73,7 @@ public class ChatManager : MonoBehaviour
     }
     public void cc()
     {
+<<<<<<< Updated upstream
         verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
         initialChatTexts = new string[GameObject.Find("System").GetComponent<CSVScript>().description.Length];
@@ -71,18 +83,54 @@ public class ChatManager : MonoBehaviour
             Debug.Log("swa22g" + initialChatTexts[i]);
         }
 
+=======
+ 
+        if (checkChoice == true && OpenSystemMenuV2.Instance.ended == true)
+        {
+            initial = false;
+            checkChoice = false;
+            correctChoice = "";
+            choicecorrect = false;
+        }
+        correctChoice = GameObject.Find("System").GetComponent<CSVScript>().choicecorrect[EventManage.Instance.getcurrScenario()];
+               verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
+        chatCanvas.enabled = false;
+        initialChatTexts = new string[1];
+        
+            
+            initialChatTexts[0] = GameObject.Find("System").GetComponent<CSVScript>().chat[EventManage.Instance.getcurrScenario()];
+            Debug.Log("swa22g" + initialChatTexts.Length);
+        
+        /*
+>>>>>>> Stashed changes
         choiceAChatTexts = new string[]
         {
-            "Sounds about right"
-        };
+               
+    };
 
         choiceBChatTexts = new string[]
         {
             "Hmm, not sure if it sounds like a mishing attack"
         };
-
+        
         choiceA = "Phishing";
         choiceB = "Mishing";
+        */
+        choiceA = GameObject.Find("System").GetComponent<CSVScript>().choiceA[EventManage.Instance.getcurrScenario()];
+      choiceB=GameObject.Find("System").GetComponent<CSVScript>().choiceB[EventManage.Instance.getcurrScenario()];
+
+        
+
+            choiceAChatTexts[0] = GameObject.Find("System").GetComponent<CSVScript>().choiceAResult[EventManage.Instance.getcurrScenario()];
+         
+        
+        for (int i = 0; i < choiceAChatTexts.Length; i++)
+        {
+
+            choiceBChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().choiceBResult[EventManage.Instance.getcurrScenario()];
+
+        }
+
         choiceAButtonText.text = choiceA;
         choiceBButtonText.text = choiceB;
 
@@ -188,6 +236,14 @@ public class ChatManager : MonoBehaviour
             StartCoroutine(ShowMessageCoroutine(choiceA, 0));
             ShowMessages(choiceAChatTexts, 1);
             checkChoice = true;
+<<<<<<< Updated upstream
+=======
+            if (correctChoice == "A")
+            {
+                choicecorrect = true;
+            }
+            Debug.Log("checkchoice = " + checkChoice);
+>>>>>>> Stashed changes
         }
     }
 
@@ -198,6 +254,14 @@ public class ChatManager : MonoBehaviour
             StartCoroutine(ShowMessageCoroutine(choiceB, 0));
             ShowMessages(choiceBChatTexts, 1);
             checkChoice = true;
+<<<<<<< Updated upstream
+=======
+            if (correctChoice == "B")
+            {
+                choicecorrect = true;
+            }
+            Debug.Log("checkchoice = " + checkChoice);
+>>>>>>> Stashed changes
         }
     }
     
