@@ -23,13 +23,29 @@ public class NotificationsManager : MonoBehaviour
     {
 
        int scenario =  EventManage.Instance.getScenario();
-        dialogue.sentence = new string[GameObject.Find("System").GetComponent<CSVScript>().SystemInitial.Length];
-        for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().SystemInitial.Length; i++)
-        {
-            dialogue.sentence[i] = GameObject.Find("System").GetComponent<CSVScript>().SystemInitial[EventManage.Instance.getcurrScenario()];
+       
 
-            
-            Debug.Log("swag" + dialogue.sentence[i]);
+        if (GameObject.Find("ChatManager").GetComponent<ChatManager>().choicecorrect == false)
+        {
+            dialogue.sentence = new string[GameObject.Find("System").GetComponent<CSVScript>().SystemInitial.Length];
+            for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().SystemInitial.Length; i++)
+            {
+                dialogue.sentence[i] = GameObject.Find("System").GetComponent<CSVScript>().SystemInitial[EventManage.Instance.getcurrScenario()];
+
+
+                Debug.Log("swag" + dialogue.sentence[i]);
+            }
+        }
+        else
+        {
+            dialogue.sentence = new string[GameObject.Find("System").GetComponent<CSVScript>().systemCorrect.Length];
+            for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().systemCorrect.Length; i++)
+            {
+                dialogue.sentence[i] = GameObject.Find("System").GetComponent<CSVScript>().systemCorrect[EventManage.Instance.getcurrScenario()];
+
+
+                Debug.Log("swag" + dialogue.sentence[i]);
+            }
         }
         foreach (string sentence in dialogue.sentence)
         {

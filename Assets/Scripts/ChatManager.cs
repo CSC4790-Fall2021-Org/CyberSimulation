@@ -123,10 +123,7 @@ public class ChatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(checkChoice==true && true)
-        {
-
-        }
+      
     }
 
     void ShowMessages(string[] data, int side)

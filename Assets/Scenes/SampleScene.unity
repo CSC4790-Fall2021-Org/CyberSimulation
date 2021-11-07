@@ -277,9 +277,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextAssetData: {fileID: 4900000, guid: 81993f18e38ad5447b100b68665646de, type: 3}
-  description: []
-  pool: 
+  ID: 
   chat: []
+  choiceA: []
+  choiceB: []
+  choiceAResult: []
+  choiceBResult: []
+  endRoundSum: []
+  choicecorrect: []
+  thirtythree: []
+  sixtysix: []
+  ninety: []
+  threatmoney: 
+  SystemInitial: []
+  systemCorrect: []
   eventList1:
     Loader: []
 --- !u!1001 &90373270
@@ -2338,10 +2349,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34ff49b5089fbe44aa863e0a360119d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextAssetData: {fileID: 4900000, guid: 81993f18e38ad5447b100b68665646de, type: 3}
-  description: []
-  pool: 
+  TextAssetData: {fileID: 4900000, guid: 87b107f7ab2f4d54e807dfb0546b0dcb, type: 3}
+  ID: 
   chat: []
+  choiceA: []
+  choiceB: []
+  choiceAResult: []
+  choiceBResult: []
+  endRoundSum: []
+  choicecorrect: []
+  thirtythree: []
+  sixtysix: []
+  ninety: []
+  threatmoney: 
+  SystemInitial: []
+  systemCorrect: []
   eventList1:
     Loader: []
 --- !u!1 &855000941
@@ -2672,8 +2694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21a7b44defe52eb4099e25f1c86a5a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SummaryText: {fileID: 20577197}
   SumText: 
+  SummaryText: {fileID: 20577197}
 --- !u!4 &1315762158
 Transform:
   m_ObjectHideFlags: 0
