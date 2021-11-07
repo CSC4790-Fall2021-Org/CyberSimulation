@@ -56,6 +56,7 @@ public class ClickCard : MonoBehaviour
                 cardMoney = int.Parse(child1.GetComponent<CardDisplay>().moneyValue.text);
 
                 drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child1.GetComponent<CardDisplay>().nameText.text);
+                //drawCardsButton.GetComponent<DrawCardsV2>().usedCards.Add(child1);
                 Destroy(child1);
                 child1.transform.SetParent(null);  
 
