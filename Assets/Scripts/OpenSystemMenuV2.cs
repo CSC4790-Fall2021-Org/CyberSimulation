@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OpenSystemMenuV2 : MonoBehaviour
 {
-    
+    public static OpenSystemMenuV2 Instance { get; set; }
     // Start is called before the first frame update
     public Canvas canvas;
     public bool a = false;
@@ -25,6 +25,19 @@ public class OpenSystemMenuV2 : MonoBehaviour
         {
             a = false;
             canvas.enabled = false;
+        }
+    }
+
+    void Awake()
+    {
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

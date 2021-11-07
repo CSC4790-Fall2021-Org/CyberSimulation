@@ -1,14 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 [System.Serializable]
 public class EndRound1 : MonoBehaviour
-
 {
     [SerializeField]
-    public TextMeshProUGUI SummaryText;
     public string SumText;
+    public TextMeshProUGUI SummaryText;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +19,11 @@ public class EndRound1 : MonoBehaviour
     {
         
     }
+
     public void getSumm()
     {
-        SumText = GameObject.Find("System").GetComponent<CSVScript>().description[EventManage.Instance.getcurrScenario()];
+        SumText = GameObject.Find("System").GetComponent<CSVScript>().endRoundSum[EventManage.Instance.getcurrScenario()];
         SummaryText.text = SumText;
     }
+
 }

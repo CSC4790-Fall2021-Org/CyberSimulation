@@ -19,12 +19,16 @@ public class ChatManager : MonoBehaviour
     [SerializeField] private Text choiceAButtonText;
     [SerializeField] private Text choiceBButtonText;
 
+
     private string[] initialChatTexts = new string[1];
-    private string[] choiceAChatTexts;
-    private string[] choiceBChatTexts;
+    private string[] choiceAChatTexts= new string[1];
+    private string[] choiceBChatTexts= new string[1];
+  
     private bool initial = false;
     private string choiceA;
     public string correctChoice = "";
+    public bool choicecorrect = false;
+
     private string choiceB;
     private int fontSize;
     private string lastUser;
@@ -64,50 +68,65 @@ public class ChatManager : MonoBehaviour
     }
     public void cc()
     {
-        if (checkChoice == true && GameObject.Find("EndRound").GetComponent<OpenSystemMenuV2>().ended == true)
+ 
+        if (checkChoice == true && OpenSystemMenuV2.Instance.ended == true)
         {
             initial = false;
             checkChoice = false;
             correctChoice = "";
+            choicecorrect = false;
         }
-
-        verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
+        correctChoice = GameObject.Find("System").GetComponent<CSVScript>().choicecorrect[EventManage.Instance.getcurrScenario()];
+               verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
-        //initialChatTexts = new string[1];
-        for (int i = 0; i < initialChatTexts.Length; i++)
-        {
+        initialChatTexts = new string[1];
+        
             
-            initialChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().description[EventManage.Instance.getcurrScenario()];
+            initialChatTexts[0] = GameObject.Find("System").GetComponent<CSVScript>().chat[EventManage.Instance.getcurrScenario()];
             Debug.Log("swa22g" + initialChatTexts.Length);
-        }
-
+        
+        /*
+>>>>>>> Stashed changes
         choiceAChatTexts = new string[]
         {
-            "Sounds about right"
-        };
+               
+    };
 
         choiceBChatTexts = new string[]
         {
             "Hmm, not sure if it sounds like a mishing attack"
         };
-
+        
         choiceA = "Phishing";
         choiceB = "Mishing";
+        */
+        choiceA = GameObject.Find("System").GetComponent<CSVScript>().choiceA[EventManage.Instance.getcurrScenario()];
+      choiceB=GameObject.Find("System").GetComponent<CSVScript>().choiceB[EventManage.Instance.getcurrScenario()];
+
+        
+
+            choiceAChatTexts[0] = GameObject.Find("System").GetComponent<CSVScript>().choiceAResult[EventManage.Instance.getcurrScenario()];
+         
+        
+        for (int i = 0; i < choiceAChatTexts.Length; i++)
+        {
+
+            choiceBChatTexts[i] = GameObject.Find("System").GetComponent<CSVScript>().choiceBResult[EventManage.Instance.getcurrScenario()];
+
+        }
+
         choiceAButtonText.text = choiceA;
         choiceBButtonText.text = choiceB;
-        if (initial == false)
-        {
-            ShowMessages(initialChatTexts, 1);
-            initial = true;
-        }
+
+        ShowMessages(initialChatTexts, 1);
     }
     // Update is called once per frame
     void Update()
     {
-       
+        if(checkChoice==true && true)
+        {
 
-            
-
+        }
     }
 
     void ShowMessages(string[] data, int side)
@@ -200,9 +219,13 @@ public class ChatManager : MonoBehaviour
         {
             StartCoroutine(ShowMessageCoroutine(choiceA, 0));
             ShowMessages(choiceAChatTexts, 1);
-
             checkChoice = true;
+            if (correctChoice == "A")
+            {
+                choicecorrect = true;
+            }
             Debug.Log("checkchoice = " + checkChoice);
+
         }
     }
 
@@ -213,7 +236,12 @@ public class ChatManager : MonoBehaviour
             StartCoroutine(ShowMessageCoroutine(choiceB, 0));
             ShowMessages(choiceBChatTexts, 1);
             checkChoice = true;
+            if (correctChoice == "B")
+            {
+                choicecorrect = true;
+            }
             Debug.Log("checkchoice = " + checkChoice);
+
         }
     }
     
