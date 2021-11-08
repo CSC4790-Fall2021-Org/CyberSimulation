@@ -149,45 +149,47 @@ public class DrawCardsV2 : MonoBehaviour
             currentCards--;
         }
         }
+         usedCardsNames = new List<string>();
 
-        
-        /*
-        foreach(Transform child in originalGameObject.transform)
+
+
+    /*
+    foreach(Transform child in originalGameObject.transform)
+    {
+        foreach(string str in usedCardsNames)
         {
-            foreach(string str in usedCardsNames)
+            if(child.GetComponent<CardDisplay>().nameText.text == str)
             {
-                if(child.GetComponent<CardDisplay>().nameText.text == str)
-                {
-                    Debug.Log("STRING EQUALS CARD 2");
-                }
+                Debug.Log("STRING EQUALS CARD 2");
             }
         }
-        
-        
-        if(currentCards == 5)
-        {
-            Debug.Log("within onclick of destroy cards");
-            GameObject child1 = originalGameObject.transform.GetChild(0).gameObject;
-            GameObject child2 = originalGameObject.transform.GetChild(1).gameObject;
-            GameObject child3 = originalGameObject.transform.GetChild(2).gameObject;
-            GameObject child4 = originalGameObject.transform.GetChild(3).gameObject;
-            GameObject child5 = originalGameObject.transform.GetChild(4).gameObject;
-
-            child1.SetActive(false);
-            child2.SetActive(false);
-            child3.SetActive(false);
-            child4.SetActive(false);
-            child5.SetActive(false);
-            
-            Destroy(child1);
-            Destroy(child2);
-            Destroy(child3);
-            Destroy(child4);
-            Destroy(child5);
-            
-
-            currentCards -= 5;
-        }
-        */
     }
+
+
+    if(currentCards == 5)
+    {
+        Debug.Log("within onclick of destroy cards");
+        GameObject child1 = originalGameObject.transform.GetChild(0).gameObject;
+        GameObject child2 = originalGameObject.transform.GetChild(1).gameObject;
+        GameObject child3 = originalGameObject.transform.GetChild(2).gameObject;
+        GameObject child4 = originalGameObject.transform.GetChild(3).gameObject;
+        GameObject child5 = originalGameObject.transform.GetChild(4).gameObject;
+
+        child1.SetActive(false);
+        child2.SetActive(false);
+        child3.SetActive(false);
+        child4.SetActive(false);
+        child5.SetActive(false);
+
+        Destroy(child1);
+        Destroy(child2);
+        Destroy(child3);
+        Destroy(child4);
+        Destroy(child5);
+
+
+        currentCards -= 5;
+    }
+    */
+}   
 }

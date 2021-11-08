@@ -54,8 +54,11 @@ public class ClickCard : MonoBehaviour
             {
                 //Debug.Log("inside card 1");
                 cardMoney = int.Parse(child1.GetComponent<CardDisplay>().moneyValue.text);
-
-                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child1.GetComponent<CardDisplay>().nameText.text);
+                if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child1.GetComponent<CardDisplay>().nameText.text))
+                {
+                    drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child1.GetComponent<CardDisplay>().nameText.text);
+                }
+                
                 //drawCardsButton.GetComponent<DrawCardsV2>().usedCards.Add(child1);
                 Destroy(child1);
                 child1.transform.SetParent(null);  
@@ -72,8 +75,10 @@ public class ClickCard : MonoBehaviour
             {
                 //Debug.Log("inside card 2");
                 cardMoney = int.Parse(child2.GetComponent<CardDisplay>().moneyValue.text);
-
-                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child2.GetComponent<CardDisplay>().nameText.text);
+                if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child2.GetComponent<CardDisplay>().nameText.text))
+                {
+                    drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child2.GetComponent<CardDisplay>().nameText.text);
+                }
                 Destroy(child2);
                 child2.transform.SetParent(null);  
 
@@ -89,8 +94,10 @@ public class ClickCard : MonoBehaviour
             {
                 //Debug.Log("inside card 3");
                 cardMoney = int.Parse(child3.GetComponent<CardDisplay>().moneyValue.text);
-
-                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child3.GetComponent<CardDisplay>().nameText.text);
+                if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child3.GetComponent<CardDisplay>().nameText.text))
+                {
+                    drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child3.GetComponent<CardDisplay>().nameText.text);
+                }
                 Destroy(child3);
                 child3.transform.SetParent(null);  
 
@@ -106,8 +113,10 @@ public class ClickCard : MonoBehaviour
             {
                 //Debug.Log("inside card 4");
                 cardMoney = int.Parse(child4.GetComponent<CardDisplay>().moneyValue.text);
-
-                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child4.GetComponent<CardDisplay>().nameText.text);
+                if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child4.GetComponent<CardDisplay>().nameText.text))
+                {
+                    drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child4.GetComponent<CardDisplay>().nameText.text);
+                }
                 Destroy(child4);
                 child4.transform.SetParent(null);  
 
@@ -123,8 +132,10 @@ public class ClickCard : MonoBehaviour
             {
                 //Debug.Log("inside card 5");
                 cardMoney = int.Parse(child5.GetComponent<CardDisplay>().moneyValue.text);
-
-                drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child5.GetComponent<CardDisplay>().nameText.text);
+                if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child5.GetComponent<CardDisplay>().nameText.text))
+                {
+                    drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child5.GetComponent<CardDisplay>().nameText.text);
+                }
                 Destroy(child5);
                 child5.transform.SetParent(null);  
 
