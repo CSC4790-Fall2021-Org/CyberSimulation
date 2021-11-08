@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.UI;
+[System.Serializable]
 
 public class OpenSystemMenuV2 : MonoBehaviour
 {
@@ -15,11 +18,31 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public int[] thirtt;
     public int[] sixtysix;
     public int[] ninety;
+
+    public int money;
+    public Text moneyText1;
+    public int dollars;
+    public int initialDollars;
+    public GameObject drawCardsButton;
+
+    void Start()
+    {
+        drawCardsButton = GameObject.Find("Draw Cards Button");
+    }
+
     public void popup()
     {  
 
         if (a == false&&EventManage.Instance.nextRound()==true)
         {
+            money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+            moneyText1 = GameObject.Find("Money").GetComponent<Text>();
+            dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+
+            //drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames
+
+            initialDollars = drawCardsButton.GetComponent<DrawCardsV2>().initialMoney;
+
             a = true;
             ended = true;
             canvas.enabled = true;

@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class DrawCardsV2 : MonoBehaviour
 {
@@ -43,6 +46,8 @@ public class DrawCardsV2 : MonoBehaviour
     public RectTransform targetRect4;
     public RectTransform targetRect5;
 
+    public int initialMoney;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +84,9 @@ public class DrawCardsV2 : MonoBehaviour
         if(currentCards < 5 && canGetCards)
         {
             canGetCards = false;
+
+            initialMoney = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+
             for (var i = 0; i < 5; i++)
             {
                 currentCards += 1;
