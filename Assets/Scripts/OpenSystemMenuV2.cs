@@ -13,8 +13,10 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public bool a = false;
     public bool b = false;
     public bool ended = false;
-    public int final;
+    public string final;
+    public int diff;
     public int threatmoney;
+ 
     public int[] thirtt;
     public int[] sixtysix;
     public int[] ninety;
@@ -31,16 +33,25 @@ public class OpenSystemMenuV2 : MonoBehaviour
     }
 
     public void popup()
-    {  
+    {
+        a = GameObject.Find("popupEndRound").GetComponent<OpenSystemMenu>().a;
 
-        if (a == false&&EventManage.Instance.nextRound()==true)
+        if (a == true&&EventManage.Instance.nextRound()==true)
         {
             money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
             moneyText1 = GameObject.Find("Money").GetComponent<Text>();
             dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+           
+            List<String> drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
+           
 
-            //drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames
-
+            for(int i = 0; i < drawc.Count; i++)
+            {
+                if (i==0 || i >= drawc.Count - 1)
+                {
+                    drawc[i] = "," + drawc[i] + " ,";
+                }
+            }
             initialDollars = drawCardsButton.GetComponent<DrawCardsV2>().initialMoney;
 
             a = true;
@@ -70,30 +81,39 @@ public class OpenSystemMenuV2 : MonoBehaviour
             }
 
             temp = GameObject.Find("System").GetComponent<CSVScript>().ninety[EventManage.Instance.getcurrScenario()];
-            string [] values1 = temp.Split(",".ToCharArray());
+             values = temp.Split(",".ToCharArray());
 
             int[] ninety = new int[values.Length];
 
             for (int i = 0; i < values.Length; i++)
             {
-                ninety[i] = int.Parse(values1[i]);
-                Debug.Log("ss " + values1[i]);
+                ninety[i] = int.Parse(values[i]);
+                Debug.Log("ss " + values[i]);
             }
+           
 
-            
-
-
+            final = "You selected the following cards:";
+            for (int i = 0; i < drawc.Count; i++)
+            {
+                final = final + drawc[i];
+            }
+            diff = dollars - initialDollars;
             EventManage.Instance.incrementScenario();
 
 
         }
-        else if (a == true)
-        {
-            a = false;
-            canvas.enabled = false;
-        }
+      
     }
+    public void popdown()
+    {
+  
+        ended = false;
+        GameObject.Find("ChatManager").GetComponent<ChatManager>().checkChoice = false;
+        GameObject.Find("ChatManager").GetComponent<ChatManager>().initial = false;
 
+        GameObject.Find("ChatManager").GetComponent<ChatManager>().correctChoice = "";
+        GameObject.Find("ChatManager").GetComponent<ChatManager>().choicecorrect = false;
+    }
     void Awake()
     {
 

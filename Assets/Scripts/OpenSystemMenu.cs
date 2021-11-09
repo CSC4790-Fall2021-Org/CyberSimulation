@@ -21,4 +21,18 @@ public class OpenSystemMenu : MonoBehaviour
             canvas.enabled = false;
         }
     }
+    public void popupend()
+    {
+        if (a == false && EventManage.Instance.nextRound() == true)
+        {
+            a = true;
+            canvas.enabled = true;
+
+        }
+        else if (a == true)
+        {
+            a = false;
+            canvas.enabled = false;
+        }
+    }
 }

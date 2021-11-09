@@ -13,4 +13,11 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void qq()
+    {
+        if (EventManage.Instance.currScenario == 10)
+        {
+            QuitGame();
+        }
+    }
 }

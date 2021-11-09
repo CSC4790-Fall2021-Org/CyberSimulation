@@ -17,11 +17,12 @@ public class EventManage : MonoBehaviour
     void Start()
     {
 
-        int l = GameObject.Find("System").GetComponent<CSVScript>().ID.Length;
+     //   int l = GameObject.Find("System").GetComponent<CSVScript>().ID.Length;
+
         scenarios = GameObject.Find("System").GetComponent<CSVScript>().ID.ToList();
         //  scenarioArray = new ArrayList(scenarios);
         scenariosTemp = new List<int>(scenarios.Count);
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < scenarios.Count; i++)
         {
 
             int tempScene = scenarios[Random.Range(0, scenarios.Count)];
@@ -66,7 +67,7 @@ public class EventManage : MonoBehaviour
     }
     public int getcurrScenario()
     {
-        return currScenario;
+        return scenariosTemp[currScenario]-1;
     }
     public bool nextRound()
     {

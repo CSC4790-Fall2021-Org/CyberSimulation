@@ -24,7 +24,7 @@ public class ChatManager : MonoBehaviour
     private string[] choiceAChatTexts= new string[1];
     private string[] choiceBChatTexts= new string[1];
   
-    private bool initial = false;
+    public bool initial = false;
     private string choiceA;
     public string correctChoice = "";
     public bool choicecorrect = false;
@@ -117,8 +117,11 @@ public class ChatManager : MonoBehaviour
 
         choiceAButtonText.text = choiceA;
         choiceBButtonText.text = choiceB;
-
-        ShowMessages(initialChatTexts, 1);
+        if (initial == false)
+        {
+            ShowMessages(initialChatTexts, 1);
+            initial = true;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -128,10 +131,10 @@ public class ChatManager : MonoBehaviour
 
     void ShowMessages(string[] data, int side)
     {
-        for (int i = 0; i < data.Length; i++)
-        {
-            StartCoroutine(ShowMessageCoroutine(data[i], side));
-        }
+        //for (int i = 0; i < data.Length; i++)
+       // {
+            StartCoroutine(ShowMessageCoroutine(data[0], side));
+       // }
     }
 
     IEnumerator ShowMessageCoroutine(string msg, int side)
