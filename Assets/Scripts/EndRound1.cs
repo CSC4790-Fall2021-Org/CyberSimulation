@@ -30,6 +30,8 @@ public class EndRound1 : MonoBehaviour
 
     public void getSumm()
     {
+
+        string tt = OpenSystemMenuV2.Instance.final;
         SumText = GameObject.Find("System").GetComponent<CSVScript>().endRoundSum[EventManage.Instance.getcurrScenario()];
         string temp = OpenSystemMenuV2.Instance.diff.ToString();
 

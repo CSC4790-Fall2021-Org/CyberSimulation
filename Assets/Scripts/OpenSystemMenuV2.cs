@@ -24,6 +24,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public int money;
     public Text moneyText1;
     public int dollars;
+    List<String> drawc;
     public int initialDollars;
     public GameObject drawCardsButton;
 
@@ -42,16 +43,18 @@ public class OpenSystemMenuV2 : MonoBehaviour
             moneyText1 = GameObject.Find("Money").GetComponent<Text>();
             dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
            
-            List<String> drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
-           
+             drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
+            
 
             for(int i = 0; i < drawc.Count; i++)
             {
-                if (i==0 || i >= drawc.Count - 1)
+                if (i <= drawc.Count - 1)
                 {
-                    drawc[i] = "," + drawc[i] + " ,";
+                    drawc[i] =  drawc[i] + ", ";
+                    Debug.Log("used cards " + drawc[i]);
                 }
             }
+         //   drawc[1] = ", " + drawc[1];
             initialDollars = drawCardsButton.GetComponent<DrawCardsV2>().initialMoney;
 
             a = true;
@@ -101,6 +104,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
             {
            //     if (thirtt.)
             }
+            Debug.Log("fina l is " + final);
             diff = dollars - initialDollars;
             EventManage.Instance.incrementScenario();
 

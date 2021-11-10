@@ -8,7 +8,10 @@ public class SummaryTrig : MonoBehaviour
     // Start is called before the first frame update
     public void TriggerSum()
     {
-        end.getSumm();
+        if (EventManage.Instance.nextRound() == true)
+        {
+            end.getSumm();
+        }
 
     }
 }

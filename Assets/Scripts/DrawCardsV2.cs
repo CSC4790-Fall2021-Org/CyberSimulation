@@ -143,22 +143,26 @@ public class DrawCardsV2 : MonoBehaviour
 
     public void DestroyCards()
     {
-        Debug.Log("Child count:" + originalGameObject.transform.childCount);
-
-        while(originalGameObject.transform.childCount != 0){
-        foreach(Transform child in originalGameObject.transform)
+        if (EventManage.Instance.nextRound() == true)
         {
             Debug.Log("Child count:" + originalGameObject.transform.childCount);
-            Debug.Log(child.GetComponent<CardDisplay>().nameText.text);
 
-            //usedCardsNames.Add(child.GetComponent<CardDisplay>().nameText.text);
-            cards.Add(child.gameObject);
-            child.SetParent(null);       
-            currentCards--;
-        }
-        }
-         usedCardsNames = new List<string>();
+            while (originalGameObject.transform.childCount != 0)
+            {
+                foreach (Transform child in originalGameObject.transform)
+                {
+                    Debug.Log("Child count:" + originalGameObject.transform.childCount);
+                    Debug.Log(child.GetComponent<CardDisplay>().nameText.text);
 
+                    //usedCardsNames.Add(child.GetComponent<CardDisplay>().nameText.text);
+                    cards.Add(child.gameObject);
+                    child.SetParent(null);
+                    currentCards--;
+                }
+            }
+
+            usedCardsNames = new List<string>();
+        }
 
 
     /*
