@@ -186,6 +186,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3913987644692746674, guid: fce45b82812f0a941ba8798b3e6a8f4c,
         type: 3}
+      propertyPath: m_text
+      value: New Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3913987644692746674, guid: fce45b82812f0a941ba8798b3e6a8f4c,
+        type: 3}
       propertyPath: m_TextStyleHashCode
       value: -1183493901
       objectReference: {fileID: 0}
