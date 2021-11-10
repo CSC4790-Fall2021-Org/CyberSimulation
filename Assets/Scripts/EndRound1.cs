@@ -36,10 +36,12 @@ public class EndRound1 : MonoBehaviour
         
         ff = OpenSystemMenuV2.Instance.final + " \n and you have lost $" +temp.Substring(1,temp.Length-1) + "\n";
         SummaryText.text = ff+SumText;
-        if(EventManage.Instance.currScenario == 10)
+        
+        if (EventManage.Instance.currScenario == 7)
         {
             SummaryText.text = "Congratulations! You have made it to the end. You have $" + OpenSystemMenuV2.Instance.dollars + " left!";
         }
+             
     }
 
 }

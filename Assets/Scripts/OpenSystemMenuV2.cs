@@ -97,6 +97,10 @@ public class OpenSystemMenuV2 : MonoBehaviour
             {
                 final = final + drawc[i];
             }
+            for(int i = 0; i < drawc.Count; i++)
+            {
+           //     if (thirtt.)
+            }
             diff = dollars - initialDollars;
             EventManage.Instance.incrementScenario();
 
