@@ -288,6 +288,8 @@ MonoBehaviour:
   cardBack: {fileID: 2988918751904164158}
   cardBackIsActive: 1
   timer: 0
+  canvas: {fileID: 4458881079143960574, guid: ed37a1ae490190844a4c11a7fc666a0e, type: 3}
+  a: 0
 --- !u!114 &8048328920065098814
 MonoBehaviour:
   m_ObjectHideFlags: 0

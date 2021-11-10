@@ -12,6 +12,7 @@ public class OpenSystemMenu : MonoBehaviour
         if (a == false)
         {
             a = true;
+            
             canvas.enabled = true;
 
         }
@@ -33,6 +34,25 @@ public class OpenSystemMenu : MonoBehaviour
         {
             a = false;
             canvas.enabled = false;
+        }
+    }
+    public void popupInspector()
+    {
+        if (a == false)
+        {
+            a = true;
+            canvas.enabled = true;
+
+        }
+        else if (a == true)
+        {
+            // GameObject f = GameObject.Find("CC Variant(Clone)");
+            // Debug.Log("gameobject f " + f);
+
+            //canvas = FlipCard.Instance.temp;
+            canvas.enabled = false;
+            a = false;
+          //  canvas.enabled = false;
         }
     }
 }

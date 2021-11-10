@@ -77,7 +77,7 @@ public class DrawCardsV2 : MonoBehaviour
         GameObject c1 = Instantiate(Card1, new Vector3(0, 0, 0), Quaternion.identity);
         GameObject cb1 = Instantiate(Card1Back, new Vector3(0, 0, 0), Quaternion.identity);
         c1.transform.SetParent(PlayerArea.transform, false);
-        cb1.transform.SetParent(PlayerArea.transform, false);
+        cb1.transform.SetParent(PlayerArea.transform, falsec
         cb1.transform.SetParent(c1.transform, false);
         */
                 
