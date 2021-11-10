@@ -48,6 +48,9 @@ public class DrawCardsV2 : MonoBehaviour
 
     public int initialMoney;
 
+    public int dayNum = 0;
+    public Text dayText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,11 +66,20 @@ public class DrawCardsV2 : MonoBehaviour
         cards.Add(Card10);
 
         originalGameObject = GameObject.Find("PlayerArea");
+
+        GameObject.Find("Day Number").GetComponent<Text>().text = "1";
+
+        dayText = GameObject.Find("Day Number").GetComponent<Text>();
+        dayNum = int.Parse(GameObject.Find("Day Number").GetComponent<Text>().text);
     }
 
     public void NewDay()
     {
         canGetCards = true;
+
+        dayNum++;
+        dayText.text = dayNum.ToString();
+        GameObject.Find("Day Number").GetComponent<Text>().text = dayText.text;
     }
 
     // Update is called once per frame
