@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d059cdae94345d0b81b9fc3137cc8b, type: 3}
   m_Name: Card8
   m_EditorClassIdentifier: 
-  cardName: Card 8
+  cardName: Black Hole Filtering
   ciaAspect: I
   artwork: {fileID: 0}
   moneyValue: 8

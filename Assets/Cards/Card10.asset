@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d059cdae94345d0b81b9fc3137cc8b, type: 3}
   m_Name: Card10
   m_EditorClassIdentifier: 
-  cardName: Card 10
+  cardName: Periodically Scan Software
   ciaAspect: C
   artwork: {fileID: 0}
   moneyValue: 10
