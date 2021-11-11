@@ -51,9 +51,11 @@ public class DrawCardsV2 : MonoBehaviour
     public int dayNum = 0;
     public Text dayText;
 
+    public Font myNewFont;
+
     // Start is called before the first frame update
     void Start()
-    {
+    {   
         cards.Add(Card1);
         cards.Add(Card2);
         cards.Add(Card3);
@@ -215,5 +217,10 @@ public class DrawCardsV2 : MonoBehaviour
         currentCards -= 5;
     }
     */
-}   
+    }   
+
+	public void UpdateFont()
+    {
+		//GameObject.Find("Chat Obj").GetComponent<Text>().font = myNewFont;
+	}
 }

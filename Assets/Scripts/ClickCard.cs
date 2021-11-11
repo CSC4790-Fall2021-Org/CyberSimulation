@@ -18,8 +18,6 @@ public class ClickCard : MonoBehaviour
         money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
         //Debug.Log("Money value: " + money);
         moneyText = GameObject.Find("Money").GetComponent<Text>();
-
-        
     }
 
     // Update is called once per frame
