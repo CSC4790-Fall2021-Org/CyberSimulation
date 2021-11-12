@@ -17,15 +17,21 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public int diff;
     public int threatmoney;
  
-    public int[] thirtt;
-    public int[] sixtysix;
-    public int[] ninety;
+    public List<int> thirtt;
+    public List<int> sixtysix;
+    public List<int> ninety;
 
     public int money;
     public Text moneyText1;
     public int dollars;
-    List<String> drawc;
+    List<string> drawc;
+    public List<string> ddrawc;
+    public string[] intdrawc;
     public int initialDollars;
+    public string[] cardint;
+    public int cardcounter;
+    public int cardindex;
+    public string[] cc;
     public GameObject drawCardsButton;
 
     void Start()
@@ -44,17 +50,20 @@ public class OpenSystemMenuV2 : MonoBehaviour
             dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
            
              drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
-            
-
-            for(int i = 0; i < drawc.Count; i++)
+            ddrawc = new List<string>(10);
+        
+            for (int i = 0; i < GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription.Length; i++)
             {
-                if (i <= drawc.Count - 1)
-                {
-                    drawc[i] =  drawc[i] + ", ";
-                    Debug.Log("used cards " + drawc[i]);
-                }
+                //Debug.Log("sssss2e213 " + i);
+                ddrawc.Add (GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription[i]);
+                //Debug.Log("sssss2e213 " + ddrawc[i]);
+
             }
-         //   drawc[1] = ", " + drawc[1];
+        
+            intdrawc= GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardName;
+
+
+            //   drawc[1] = ", " + drawc[1];
             initialDollars = drawCardsButton.GetComponent<DrawCardsV2>().initialMoney;
 
             a = true;
@@ -64,45 +73,71 @@ public class OpenSystemMenuV2 : MonoBehaviour
             string temp = GameObject.Find("System").GetComponent<CSVScript>().thirtythree[EventManage.Instance.getcurrScenario()];
             string[] values = temp.Split(",".ToCharArray());
 
-            int[] thirtt = new int[values.Length];
+           thirtt = new List<int>();
 
             for(int i = 0; i < values.Length; i++)
             {
-                thirtt[i] = int.Parse(values[i]);
+                thirtt.Add(int.Parse(values[i]));
                 Debug.Log("ss " + values[i]);
             }
 
             temp = GameObject.Find("System").GetComponent<CSVScript>().sixtysix[EventManage.Instance.getcurrScenario()];
             values = temp.Split(",".ToCharArray());
 
-            int[] sixtysix = new int[values.Length];
+             sixtysix = new List<int>();
 
             for (int i = 0; i < values.Length; i++)
             {
-                sixtysix[i] = int.Parse(values[i]);
+                sixtysix.Add(int.Parse(values[i]));
                 Debug.Log("ss " + values[i]);
             }
 
             temp = GameObject.Find("System").GetComponent<CSVScript>().ninety[EventManage.Instance.getcurrScenario()];
              values = temp.Split(",".ToCharArray());
 
-            int[] ninety = new int[values.Length];
+           ninety = new List<int>();
 
             for (int i = 0; i < values.Length; i++)
             {
-                ninety[i] = int.Parse(values[i]);
+                ninety.Add( int.Parse(values[i]));
                 Debug.Log("ss " + values[i]);
             }
            
 
+            
+            for(int i = 0; i < drawc.Count; i++)
+            {
+          // if()
+            }
+            cardcounter = 0;
+            cc = new string[10];
+            cardindex = 0;
+            for (int i = 0; i < intdrawc.Length; i++)
+            {
+                if ((drawc.FindIndex(a => a.Contains(intdrawc[i])) != -1)){
+                    cardindex = drawc.FindIndex(a => a.Contains(intdrawc[i]));
+                    cc[cardcounter] = intdrawc[i];
+                    Debug.Log("cardcount " + cardindex);
+                    cardcounter++;
+                }
+     
+            }
+            for(int i = 0; i < cc.Length; i++)
+            {
+                
+            }
+            for (int i = 0; i < drawc.Count; i++)
+            {
+                if (i <= drawc.Count - 1)
+                {
+                    drawc[i] = drawc[i] + ", ";
+                    Debug.Log("used cards " + drawc[i]);
+                }
+            }
             final = "You selected the following cards:";
             for (int i = 0; i < drawc.Count; i++)
             {
                 final = final + drawc[i];
-            }
-            for(int i = 0; i < drawc.Count; i++)
-            {
-           //     if (thirtt.)
             }
             Debug.Log("fina l is " + final);
             diff = dollars - initialDollars;
