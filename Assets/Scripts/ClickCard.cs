@@ -47,6 +47,7 @@ public class ClickCard : MonoBehaviour
             RectTransform targetRect4 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect4;
             RectTransform targetRect5 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect5;
 
+            
             //card 1
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect1, mousePos))
             {
@@ -57,6 +58,7 @@ public class ClickCard : MonoBehaviour
                     drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child1.GetComponent<CardDisplay>().nameText.text);
                 }
                 
+                money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 //drawCardsButton.GetComponent<DrawCardsV2>().usedCards.Add(child1);
                 Destroy(child1);
                 child1.transform.SetParent(null);  
@@ -64,6 +66,7 @@ public class ClickCard : MonoBehaviour
                 drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
                 money = money - cardMoney;
+
                 moneyText.text = money.ToString();
                 GameObject.Find("Money").GetComponent<Text>().text = moneyText.text;
             }
@@ -77,6 +80,7 @@ public class ClickCard : MonoBehaviour
                 {
                     drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child2.GetComponent<CardDisplay>().nameText.text);
                 }
+                money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child2);
                 child2.transform.SetParent(null);  
 
@@ -96,6 +100,7 @@ public class ClickCard : MonoBehaviour
                 {
                     drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child3.GetComponent<CardDisplay>().nameText.text);
                 }
+                money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child3);
                 child3.transform.SetParent(null);  
 
@@ -115,6 +120,7 @@ public class ClickCard : MonoBehaviour
                 {
                     drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child4.GetComponent<CardDisplay>().nameText.text);
                 }
+                money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child4);
                 child4.transform.SetParent(null);  
 
@@ -134,6 +140,7 @@ public class ClickCard : MonoBehaviour
                 {
                     drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Add(child5.GetComponent<CardDisplay>().nameText.text);
                 }
+                money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child5);
                 child5.transform.SetParent(null);  
 

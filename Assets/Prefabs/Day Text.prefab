@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5778995300727452038}
   - component: {fileID: 5778995300727452037}
   - component: {fileID: 5778995300727452036}
-  - component: {fileID: 5778995300727452039}
   m_Layer: 5
   m_Name: Day Number
   m_TagString: Untagged
@@ -80,22 +79,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 1
---- !u!114 &5778995300727452039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5778995300727452057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d4d0d12096747ec9c710fcaa47c398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: {fileID: 0}
-  moneyInt: 0
-  temp: 0
-  dollars: 0
 --- !u!1 &5778995302253554551
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,7 +90,6 @@ GameObject:
   - component: {fileID: 5778995302253554548}
   - component: {fileID: 5778995302253554547}
   - component: {fileID: 5778995302253554546}
-  - component: {fileID: 5778995302253554549}
   m_Layer: 5
   m_Name: Day Text
   m_TagString: Untagged
@@ -177,19 +159,3 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Day:'
---- !u!114 &5778995302253554549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5778995302253554551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d4d0d12096747ec9c710fcaa47c398, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: {fileID: 0}
-  moneyInt: 0
-  temp: 0
-  dollars: 0

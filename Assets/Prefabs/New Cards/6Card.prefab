@@ -27,15 +27,15 @@ RectTransform:
   m_GameObject: {fileID: 7576114521804763363}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 7576114523874652471}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 152, y: -83}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -20.6568, y: 67.144}
+  m_SizeDelta: {x: 164.3782, y: 98.893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7576114521804763374
 CanvasRenderer:
@@ -67,11 +67,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f37abb88f761e4927b0eafa967f96faf, type: 3}
-    m_FontSize: 14
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 6
+    m_MaxSize: 65
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -106,15 +106,15 @@ RectTransform:
   m_GameObject: {fileID: 7576114522705031455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 7576114523874652471}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: -86}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -11.2, y: -78.5}
+  m_SizeDelta: {x: 243.1828, y: 75.9694}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7576114522705031450
 CanvasRenderer:
@@ -146,10 +146,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f37abb88f761e4927b0eafa967f96faf, type: 3}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -185,15 +185,15 @@ RectTransform:
   m_GameObject: {fileID: 7576114523847806819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 7576114523874652471}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00016105, y: 15.745}
-  m_SizeDelta: {x: 80, y: 79.6733}
+  m_AnchoredPosition: {x: -0.3602, y: -27.4491}
+  m_SizeDelta: {x: 154.3901, y: 218.855}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7576114523847806830
 CanvasRenderer:
@@ -225,18 +225,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f37abb88f761e4927b0eafa967f96faf, type: 3}
-    m_FontSize: 14
+    m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Card Name
+  m_Text: Install Browser Detection Software
 --- !u!1 &7576114523874652470
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,7 +269,7 @@ RectTransform:
   m_GameObject: {fileID: 7576114523874652470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7576114523847806816}
   - {fileID: 7576114521804763360}
@@ -304,14 +304,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.09019607, g: 0.4509804, b: 0.11766256, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cbf144c91bea44d74b6c36d416a40777, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -367,6 +367,7 @@ MonoBehaviour:
   cardBack: {fileID: 5002098335568166473}
   description: {fileID: 0}
   cardBackIsActive: 1
+  ddrawc: []
   timer: 0
   canvas: {fileID: 0}
   temp: {fileID: 0}

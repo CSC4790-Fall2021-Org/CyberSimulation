@@ -120,11 +120,17 @@ public class DrawCardsV2 : MonoBehaviour
             child4 = originalGameObject.transform.GetChild(3).gameObject;
             child5 = originalGameObject.transform.GetChild(4).gameObject;
 
-            child1.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            child1.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            child2.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            child3.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            child4.gameObject.transform.localScale = new Vector3(1, 1, 1);
+            child5.gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+            /*child1.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
             child2.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
             child3.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
             child4.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
-            child5.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            child5.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);*/
 
             child1.SetActive(true);
             child2.SetActive(true);

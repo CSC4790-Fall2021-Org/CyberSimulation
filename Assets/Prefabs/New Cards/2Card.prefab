@@ -27,15 +27,15 @@ RectTransform:
   m_GameObject: {fileID: 1520337443852280753}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1520337443961241298}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: -86}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -13.6, y: -78.6}
+  m_SizeDelta: {x: 228.3539, y: 71.7719}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1520337443852280754
 CanvasRenderer:
@@ -67,10 +67,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f37abb88f761e4927b0eafa967f96faf, type: 3}
-    m_FontSize: 14
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -111,7 +111,7 @@ RectTransform:
   m_GameObject: {fileID: 1520337443961241299}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1520337444316280979}
   - {fileID: 1520337445168959306}
@@ -146,14 +146,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.054957304, b: 0.17935462, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cbf144c91bea44d74b6c36d416a40777, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -209,6 +209,7 @@ MonoBehaviour:
   cardBack: {fileID: 7047985688578741202}
   description: {fileID: 0}
   cardBackIsActive: 1
+  ddrawc: []
   timer: 0
   canvas: {fileID: 4458881079143960574, guid: ed37a1ae490190844a4c11a7fc666a0e, type: 3}
   temp: {fileID: 0}
@@ -302,15 +303,15 @@ RectTransform:
   m_GameObject: {fileID: 1520337444316280976}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1520337443961241298}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00016105, y: 21.1443}
-  m_SizeDelta: {x: 80, y: 72.4742}
+  m_AnchoredPosition: {x: 0.2848, y: -28.612}
+  m_SizeDelta: {x: 152.1513, y: 225.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1520337444316280981
 CanvasRenderer:
@@ -342,18 +343,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f37abb88f761e4927b0eafa967f96faf, type: 3}
-    m_FontSize: 14
+    m_FontSize: 27
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Card Name
+  m_Text: Widespread Adoption of VPN
 --- !u!1 &1520337445168959307
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,15 +382,15 @@ RectTransform:
   m_GameObject: {fileID: 1520337445168959307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 1520337443961241298}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 152, y: -83}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 9.3, y: 65.1}
+  m_SizeDelta: {x: 366.9608, y: 109.7461}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1520337445168959308
 CanvasRenderer:
@@ -421,11 +422,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f37abb88f761e4927b0eafa967f96faf, type: 3}
-    m_FontSize: 14
+    m_FontSize: 65
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 65
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
