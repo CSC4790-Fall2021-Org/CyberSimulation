@@ -377,6 +377,14 @@ public class DrawCardsV2 : MonoBehaviour
     {
         if(GameObject.Find("PlayerArea").transform.childCount > 0)
         {
+            if(GameObject.Find("PlayerArea").transform.childCount > 2)
+            {
+                Debug.Log("Greater than 2 children");
+            }
+            if(GameObject.Find("PlayerArea").transform.childCount > 4)
+            {
+                Debug.Log("Greater than 4 children");
+            }
             child1.SetActive(false);
             child2.SetActive(false);
             child3.SetActive(false);
