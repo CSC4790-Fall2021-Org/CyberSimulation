@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26d059cdae94345d0b81b9fc3137cc8b, type: 3}
   m_Name: Card5
   m_EditorClassIdentifier: 
-  cardName: Implement Two-Factor Authentication
+  cardName: Implement 2FA
   ciaAspect: I
   artwork: {fileID: 21300000, guid: cbf144c91bea44d74b6c36d416a40777, type: 3}
   moneyValue: 5
