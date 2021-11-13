@@ -26,6 +26,7 @@ public class DrawCardsV2 : MonoBehaviour
     public int currentCards = 0;
 
     public List<GameObject> cards = new List<GameObject>();
+    public List<GameObject> backupCards = new List<GameObject>();
 
     public List<string> usedCardsNames = new List<string>();
     public List<GameObject> usedCards = new List<GameObject>();
@@ -56,6 +57,14 @@ public class DrawCardsV2 : MonoBehaviour
     AudioSource cardDrawnAudio;
     AudioSource cardShuffleAudio;
 
+    public bool repeatCard = false;
+
+    public bool child1Active;
+    public bool child2Active;
+    public bool child3Active;
+    public bool child4Active;
+    public bool child5Active;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -69,6 +78,17 @@ public class DrawCardsV2 : MonoBehaviour
         cards.Add(Card8);
         cards.Add(Card9);
         cards.Add(Card10);
+
+        backupCards.Add(Card1);
+        backupCards.Add(Card2);
+        backupCards.Add(Card3);
+        backupCards.Add(Card4);
+        backupCards.Add(Card5);
+        backupCards.Add(Card6);
+        backupCards.Add(Card7);
+        backupCards.Add(Card8);
+        backupCards.Add(Card9);
+        backupCards.Add(Card10);
 
         originalGameObject = GameObject.Find("PlayerArea");
 
@@ -107,13 +127,23 @@ public class DrawCardsV2 : MonoBehaviour
 
             initialMoney = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
 
-            //DrawCard1(0);
+            Debug.Log("List Size: " + cards.Count);
+            while(cards.Count < 5)
+            {
+                BackupAdd();
+            }
+
             Invoke("DrawCard11", 0.5f);
             Invoke("DrawCard2", 1.0f);
             Invoke("DrawCard3", 1.5f);
             Invoke("DrawCard4", 2.0f);
             Invoke("DrawCard5", 2.5f);
 
+            child1Active = true;
+            child2Active = true;
+            child3Active = true;
+            child4Active = true;
+            child5Active = true;
 
             /*for (var i = 0; i < 5; i++)
             {
@@ -180,6 +210,7 @@ public class DrawCardsV2 : MonoBehaviour
         if (EventManage.Instance.nextRound() == true)
         {
             Debug.Log("Child count:" + originalGameObject.transform.childCount);
+            Invoke("ShuffleNoise", 0.5f);
 
             while (originalGameObject.transform.childCount != 0)
             {
@@ -265,6 +296,25 @@ public class DrawCardsV2 : MonoBehaviour
         targetRect1 = child1.GetComponent<RectTransform>();
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }*/
+    void BackupAdd()
+    {
+        tempCard = backupCards[Random.Range(0, backupCards.Count)];
+
+        repeatCard = false;
+
+        foreach(GameObject obj in cards)
+        {
+            if(tempCard.GetComponent<CardDisplay>().nameText.text == obj.GetComponent<CardDisplay>().nameText.text)
+            {
+                repeatCard = true;
+            }
+        }
+
+        if(repeatCard == false)
+        {
+            cards.Add(tempCard);
+        } 
+    }
 
     void DrawCard11()
     {
@@ -365,11 +415,32 @@ public class DrawCardsV2 : MonoBehaviour
     {
         if(GameObject.Find("PlayerArea").transform.childCount > 0)
         {
+            if(child1Active == true)
+            {
+                child1.SetActive(true);
+            }
+            if(child2Active == true)
+            {
+                child2.SetActive(true);
+            }
+            if(child3Active == true)
+            {
+                child3.SetActive(true);
+            }
+            if(child4Active == true)
+            {
+                child4.SetActive(true);
+            }
+            if(child5Active == true)
+            {
+                child5.SetActive(true);
+            }
+            /*
             child1.SetActive(true);
             child2.SetActive(true);
             child3.SetActive(true);
             child4.SetActive(true);
-            child5.SetActive(true); 
+            child5.SetActive(true); */
         }
     }
 
@@ -377,19 +448,32 @@ public class DrawCardsV2 : MonoBehaviour
     {
         if(GameObject.Find("PlayerArea").transform.childCount > 0)
         {
-            if(GameObject.Find("PlayerArea").transform.childCount > 2)
+            if(child1Active == true)
             {
-                Debug.Log("Greater than 2 children");
+                child1.SetActive(false);
             }
-            if(GameObject.Find("PlayerArea").transform.childCount > 4)
+            if(child2Active == true)
             {
-                Debug.Log("Greater than 4 children");
+                child2.SetActive(false);
             }
+            if(child3Active == true)
+            {
+                child3.SetActive(false);
+            }
+            if(child4Active == true)
+            {
+                child4.SetActive(false);
+            }
+            if(child5Active == true)
+            {
+                child5.SetActive(false);
+            }
+            /*
             child1.SetActive(false);
             child2.SetActive(false);
             child3.SetActive(false);
             child4.SetActive(false);
-            child5.SetActive(false); 
+            child5.SetActive(false); */
         }
     }
 
@@ -398,8 +482,4 @@ public class DrawCardsV2 : MonoBehaviour
         cardShuffleAudio.Play(0);
     }
 
-    public void ShuffleCardNoise()
-    {
-        Invoke("ShuffleNoise", 0.5f);
-    }
 }

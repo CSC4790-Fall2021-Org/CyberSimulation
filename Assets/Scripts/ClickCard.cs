@@ -13,6 +13,8 @@ public class ClickCard : MonoBehaviour
     public int cardMoney;
 
     AudioSource buyCard;
+
+    public GameObject drawCardsButton;
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,13 @@ public class ClickCard : MonoBehaviour
         moneyText = GameObject.Find("Money").GetComponent<Text>();
 
         buyCard = GameObject.Find("BuySound").GetComponent<AudioSource>();
+        drawCardsButton = GameObject.Find("Draw Cards Button");
+
+        drawCardsButton.GetComponent<DrawCardsV2>().child1Active = true;
+        drawCardsButton.GetComponent<DrawCardsV2>().child2Active = true;
+        drawCardsButton.GetComponent<DrawCardsV2>().child3Active = true;
+        drawCardsButton.GetComponent<DrawCardsV2>().child4Active = true;
+        drawCardsButton.GetComponent<DrawCardsV2>().child5Active = true;
     }
 
     // Update is called once per frame
@@ -36,7 +45,6 @@ public class ClickCard : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            GameObject drawCardsButton = GameObject.Find("Draw Cards Button");
 
             GameObject originalGameObject = GameObject.Find("PlayerArea");
             GameObject child1 = drawCardsButton.GetComponent<DrawCardsV2>().child1;
@@ -67,6 +75,7 @@ public class ClickCard : MonoBehaviour
                 //drawCardsButton.GetComponent<DrawCardsV2>().usedCards.Add(child1);
                 Destroy(child1);
                 child1.transform.SetParent(null);  
+                drawCardsButton.GetComponent<DrawCardsV2>().child1Active = false;
 
                 drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
@@ -88,7 +97,8 @@ public class ClickCard : MonoBehaviour
                 }
                 money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child2);
-                child2.transform.SetParent(null);  
+                child2.transform.SetParent(null);
+                drawCardsButton.GetComponent<DrawCardsV2>().child2Active = false;
 
                 drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
@@ -110,6 +120,7 @@ public class ClickCard : MonoBehaviour
                 money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child3);
                 child3.transform.SetParent(null);  
+                drawCardsButton.GetComponent<DrawCardsV2>().child3Active = false;
 
                 drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
@@ -131,6 +142,7 @@ public class ClickCard : MonoBehaviour
                 money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child4);
                 child4.transform.SetParent(null);  
+                drawCardsButton.GetComponent<DrawCardsV2>().child4Active = false;
 
                 drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
@@ -152,6 +164,7 @@ public class ClickCard : MonoBehaviour
                 money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
                 Destroy(child5);
                 child5.transform.SetParent(null);  
+                drawCardsButton.GetComponent<DrawCardsV2>().child5Active = false;
 
                 drawCardsButton.GetComponent<DrawCardsV2>().currentCards = originalGameObject.transform.childCount;
 
