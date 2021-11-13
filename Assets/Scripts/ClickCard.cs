@@ -11,6 +11,8 @@ public class ClickCard : MonoBehaviour
     public Text moneyText;
 
     public int cardMoney;
+
+    AudioSource buyCard;
     
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,8 @@ public class ClickCard : MonoBehaviour
         money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
         //Debug.Log("Money value: " + money);
         moneyText = GameObject.Find("Money").GetComponent<Text>();
+
+        buyCard = GameObject.Find("BuySound").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -51,6 +55,7 @@ public class ClickCard : MonoBehaviour
             //card 1
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect1, mousePos))
             {
+                buyCard.Play(0);
                 //Debug.Log("inside card 1");
                 cardMoney = int.Parse(child1.GetComponent<CardDisplay>().moneyValue.text);
                 if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child1.GetComponent<CardDisplay>().nameText.text))
@@ -74,6 +79,7 @@ public class ClickCard : MonoBehaviour
             //card 2
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect2, mousePos))
             {
+                buyCard.Play(0);
                 //Debug.Log("inside card 2");
                 cardMoney = int.Parse(child2.GetComponent<CardDisplay>().moneyValue.text);
                 if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child2.GetComponent<CardDisplay>().nameText.text))
@@ -94,6 +100,7 @@ public class ClickCard : MonoBehaviour
             //card 3
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect3, mousePos))
             {
+                buyCard.Play(0);
                 //Debug.Log("inside card 3");
                 cardMoney = int.Parse(child3.GetComponent<CardDisplay>().moneyValue.text);
                 if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child3.GetComponent<CardDisplay>().nameText.text))
@@ -114,6 +121,7 @@ public class ClickCard : MonoBehaviour
             //card 4
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect4, mousePos))
             {
+                buyCard.Play(0);
                 //Debug.Log("inside card 4");
                 cardMoney = int.Parse(child4.GetComponent<CardDisplay>().moneyValue.text);
                 if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child4.GetComponent<CardDisplay>().nameText.text))
@@ -134,6 +142,7 @@ public class ClickCard : MonoBehaviour
             //card 5
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect5, mousePos))
             {
+                buyCard.Play(0);
                 //Debug.Log("inside card 5");
                 cardMoney = int.Parse(child5.GetComponent<CardDisplay>().moneyValue.text);
                 if (!drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames.Contains(child5.GetComponent<CardDisplay>().nameText.text))

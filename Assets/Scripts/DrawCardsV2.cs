@@ -53,6 +53,9 @@ public class DrawCardsV2 : MonoBehaviour
 
     public Font myNewFont;
 
+    AudioSource cardDrawnAudio;
+    AudioSource cardShuffleAudio;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -73,6 +76,9 @@ public class DrawCardsV2 : MonoBehaviour
 
         dayText = GameObject.Find("Day Number").GetComponent<Text>();
         dayNum = int.Parse(GameObject.Find("Day Number").GetComponent<Text>().text);
+
+        cardDrawnAudio = GameObject.Find("Card Drawn").GetComponent<AudioSource>();
+        cardShuffleAudio = GameObject.Find("ShuffleCards").GetComponent<AudioSource>();
     }
 
     public void NewDay()
@@ -101,7 +107,15 @@ public class DrawCardsV2 : MonoBehaviour
 
             initialMoney = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
 
-            for (var i = 0; i < 5; i++)
+            //DrawCard1(0);
+            Invoke("DrawCard11", 0.5f);
+            Invoke("DrawCard2", 1.0f);
+            Invoke("DrawCard3", 1.5f);
+            Invoke("DrawCard4", 2.0f);
+            Invoke("DrawCard5", 2.5f);
+
+
+            /*for (var i = 0; i < 5; i++)
             {
                 currentCards += 1;
 
@@ -126,13 +140,12 @@ public class DrawCardsV2 : MonoBehaviour
             child4.gameObject.transform.localScale = new Vector3(1, 1, 1);
             child5.gameObject.transform.localScale = new Vector3(1, 1, 1);
 
-            /*child1.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
-            child2.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
-            child3.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
-            child4.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
-            child5.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);*/
+            //child1.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            //child2.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            //child3.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            //child4.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
+            //child5.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
 
-            //DrawCard1(0.5f);
             child1.SetActive(true);
             child2.SetActive(true);
             child3.SetActive(true);
@@ -143,7 +156,7 @@ public class DrawCardsV2 : MonoBehaviour
             targetRect2 = child2.GetComponent<RectTransform>();
             targetRect3 = child3.GetComponent<RectTransform>();
             targetRect4 = child4.GetComponent<RectTransform>();
-            targetRect5 = child5.GetComponent<RectTransform>();
+            targetRect5 = child5.GetComponent<RectTransform>();*/
         }
     }
 
@@ -231,11 +244,154 @@ public class DrawCardsV2 : MonoBehaviour
 		//GameObject.Find("Chat Obj").GetComponent<Text>().font = myNewFont;
 	}
 
-    IEnumerator DrawCard1(float time)
+    /*IEnumerator DrawCard1(float time)
     {
+        Debug.Log("Started Coroutine at timestamp : " + Time.time);
         yield return new WaitForSeconds(time);
+
+        currentCards += 1;
+
+        tempCard = cards[Random.Range(0, cards.Count)];
+
+        GameObject playerCard = Instantiate(tempCard, new Vector3(0, 0, 0), Quaternion.identity);
+        playerCard.transform.SetParent(PlayerArea.transform, false);
+
+        cards.Remove(tempCard);
+
+        child1 = originalGameObject.transform.GetChild(0).gameObject;
+        child1.gameObject.transform.localScale = new Vector3(1, 1, 1);
 
         child1.SetActive(true);
         targetRect1 = child1.GetComponent<RectTransform>();
+        Debug.Log("Finished Coroutine at timestamp : " + Time.time);
+    }*/
+
+    void DrawCard11()
+    {
+        cardDrawnAudio.Play(0);
+        currentCards += 1;
+
+        tempCard = cards[Random.Range(0, cards.Count)];
+
+        GameObject playerCard = Instantiate(tempCard, new Vector3(0, 0, 0), Quaternion.identity);
+        playerCard.transform.SetParent(PlayerArea.transform, false);
+
+        cards.Remove(tempCard);
+
+        child1 = originalGameObject.transform.GetChild(0).gameObject;
+        child1.gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        child1.SetActive(true);
+        targetRect1 = child1.GetComponent<RectTransform>();
+    }
+
+    void DrawCard2()
+    {
+        cardDrawnAudio.Play(0);
+        currentCards += 1;
+
+        tempCard = cards[Random.Range(0, cards.Count)];
+
+        GameObject playerCard = Instantiate(tempCard, new Vector3(0, 0, 0), Quaternion.identity);
+        playerCard.transform.SetParent(PlayerArea.transform, false);
+
+        cards.Remove(tempCard);
+
+        child2 = originalGameObject.transform.GetChild(1).gameObject;
+        child2.gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        child2.SetActive(true);
+        targetRect2 = child2.GetComponent<RectTransform>();
+    }
+
+    void DrawCard3()
+    {
+        cardDrawnAudio.Play(0);
+        currentCards += 1;
+
+        tempCard = cards[Random.Range(0, cards.Count)];
+
+        GameObject playerCard = Instantiate(tempCard, new Vector3(0, 0, 0), Quaternion.identity);
+        playerCard.transform.SetParent(PlayerArea.transform, false);
+
+        cards.Remove(tempCard);
+
+        child3 = originalGameObject.transform.GetChild(2).gameObject;
+        child3.gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        child3.SetActive(true);
+        targetRect3 = child3.GetComponent<RectTransform>();
+    }
+
+    void DrawCard4()
+    {
+        cardDrawnAudio.Play(0);
+        currentCards += 1;
+
+        tempCard = cards[Random.Range(0, cards.Count)];
+
+        GameObject playerCard = Instantiate(tempCard, new Vector3(0, 0, 0), Quaternion.identity);
+        playerCard.transform.SetParent(PlayerArea.transform, false);
+
+        cards.Remove(tempCard);
+
+        child4 = originalGameObject.transform.GetChild(3).gameObject;
+        child4.gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        child4.SetActive(true);
+        targetRect4 = child4.GetComponent<RectTransform>();
+    }
+
+    void DrawCard5()
+    {
+        cardDrawnAudio.Play(0);
+        currentCards += 1;
+
+        tempCard = cards[Random.Range(0, cards.Count)];
+
+        GameObject playerCard = Instantiate(tempCard, new Vector3(0, 0, 0), Quaternion.identity);
+        playerCard.transform.SetParent(PlayerArea.transform, false);
+
+        cards.Remove(tempCard);
+
+        child5 = originalGameObject.transform.GetChild(4).gameObject;
+        child5.gameObject.transform.localScale = new Vector3(1, 1, 1);
+
+        child5.SetActive(true);
+        targetRect5 = child5.GetComponent<RectTransform>();
+    }
+
+    public void CardsActive()
+    {
+        if(GameObject.Find("PlayerArea").transform.childCount > 0)
+        {
+            child1.SetActive(true);
+            child2.SetActive(true);
+            child3.SetActive(true);
+            child4.SetActive(true);
+            child5.SetActive(true); 
+        }
+    }
+
+    public void CardsNotActive()
+    {
+        if(GameObject.Find("PlayerArea").transform.childCount > 0)
+        {
+            child1.SetActive(false);
+            child2.SetActive(false);
+            child3.SetActive(false);
+            child4.SetActive(false);
+            child5.SetActive(false); 
+        }
+    }
+
+    public void ShuffleNoise()
+    {
+        cardShuffleAudio.Play(0);
+    }
+
+    public void ShuffleCardNoise()
+    {
+        Invoke("ShuffleNoise", 0.5f);
     }
 }
