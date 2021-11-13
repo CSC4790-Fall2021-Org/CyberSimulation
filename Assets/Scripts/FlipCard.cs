@@ -17,10 +17,18 @@ public class FlipCard : MonoBehaviour
     public Canvas temp;
     public bool a = false;
 
+    public GameObject CardDescriptionParent;
+    public GameObject CardDescription;
+
+    public GameObject drawCardsButton;
+
     // Start is called before the first frame update
     void Start()
     {
         cardBackIsActive = false;
+        drawCardsButton = GameObject.Find("Draw Cards Button");
+        CardDescriptionParent = GameObject.Find("Card Descriptions");
+        CardDescription = CardDescriptionParent.transform.Find("Card Window").gameObject;
     }
     public void popup(Canvas canvas)
     {
@@ -40,20 +48,24 @@ public class FlipCard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if(Input.GetMouseButtonDown(1))
         {
             //StartFlip();
-
+            //  string temp = GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription[];
+            //GameObject.Find("Draw Cards Button").GetComponent<DrawCardsV2>().targetRect1;
+            //Alan's Code Here
+            /* 
             ddrawc = GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription;
             string tempp =  GameObject.Find("System").GetComponent<CSVScript>().endRoundSum[1];
             description.text = tempp;
             temp = Instantiate(canvas, new Vector3(0, 0, 0), Quaternion.identity);
             popup(temp);
             Debug.Log("in flip + temp " + tempp);
-         
-            //  string temp = GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription[];
-            //GameObject.Find("Draw Cards Button").GetComponent<DrawCardsV2>().targetRect1;
+            */
 
+            CardDescription.SetActive(true);
+            drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
         }
     }
     public void closee(Canvas canvas)

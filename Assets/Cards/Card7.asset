@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Card7
   m_EditorClassIdentifier: 
   cardName: Traffic Reports
-  ciaAspect: C
+  ciaAspect: I
   artwork: {fileID: 21300000, guid: cbf144c91bea44d74b6c36d416a40777, type: 3}
   moneyValue: 7

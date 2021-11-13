@@ -330,6 +330,7 @@ MonoBehaviour:
   money: 0
   moneyText: {fileID: 0}
   cardMoney: 0
+  drawCardsButton: {fileID: 0}
 --- !u!114 &6792435105866109350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +368,8 @@ MonoBehaviour:
   canvas: {fileID: 7445875281149483475, guid: 48d18b007c8cecc4aa042cf7efc982ca, type: 3}
   temp: {fileID: 0}
   a: 0
+  CardDescription: {fileID: 0}
+  drawCardsButton: {fileID: 0}
 --- !u!114 &1831204368944585665
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -65,6 +65,12 @@ public class DrawCardsV2 : MonoBehaviour
     public bool child4Active;
     public bool child5Active;
 
+    public bool lastCardDrawn = true;
+    public bool inChatManager = false;
+
+    public GameObject CardDescriptionParent;
+    public GameObject CardDescription;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -99,6 +105,8 @@ public class DrawCardsV2 : MonoBehaviour
 
         cardDrawnAudio = GameObject.Find("Card Drawn").GetComponent<AudioSource>();
         cardShuffleAudio = GameObject.Find("ShuffleCards").GetComponent<AudioSource>();
+
+        CardDescriptionParent = GameObject.Find("Card Descriptions");
     }
 
     public void NewDay()
@@ -124,6 +132,7 @@ public class DrawCardsV2 : MonoBehaviour
         if(currentCards < 5 && canGetCards)
         {
             canGetCards = false;
+            lastCardDrawn = false;
 
             initialMoney = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
 
@@ -333,6 +342,8 @@ public class DrawCardsV2 : MonoBehaviour
 
         child1.SetActive(true);
         targetRect1 = child1.GetComponent<RectTransform>();
+
+        child1.GetComponent<FlipCard>().CardDescription = CardDescriptionParent.transform.Find("Card Window").gameObject;
     }
 
     void DrawCard2()
@@ -352,6 +363,8 @@ public class DrawCardsV2 : MonoBehaviour
 
         child2.SetActive(true);
         targetRect2 = child2.GetComponent<RectTransform>();
+
+        child2.GetComponent<FlipCard>().CardDescription = CardDescriptionParent.transform.Find("Card Window").gameObject;
     }
 
     void DrawCard3()
@@ -371,6 +384,8 @@ public class DrawCardsV2 : MonoBehaviour
 
         child3.SetActive(true);
         targetRect3 = child3.GetComponent<RectTransform>();
+
+        child3.GetComponent<FlipCard>().CardDescription = CardDescriptionParent.transform.Find("Card Window").gameObject;
     }
 
     void DrawCard4()
@@ -390,6 +405,8 @@ public class DrawCardsV2 : MonoBehaviour
 
         child4.SetActive(true);
         targetRect4 = child4.GetComponent<RectTransform>();
+
+        child4.GetComponent<FlipCard>().CardDescription = CardDescriptionParent.transform.Find("Card Window").gameObject;
     }
 
     void DrawCard5()
@@ -409,10 +426,15 @@ public class DrawCardsV2 : MonoBehaviour
 
         child5.SetActive(true);
         targetRect5 = child5.GetComponent<RectTransform>();
+        lastCardDrawn = true;
+
+        child5.GetComponent<FlipCard>().CardDescription = CardDescriptionParent.transform.Find("Card Window").gameObject;
     }
 
     public void CardsActive()
     {
+        inChatManager = false;
+
         if(GameObject.Find("PlayerArea").transform.childCount > 0)
         {
             if(child1Active == true)
@@ -446,34 +468,39 @@ public class DrawCardsV2 : MonoBehaviour
 
     public void CardsNotActive()
     {
-        if(GameObject.Find("PlayerArea").transform.childCount > 0)
+        inChatManager = true;
+
+        if(lastCardDrawn == true)
         {
-            if(child1Active == true)
+            if(GameObject.Find("PlayerArea").transform.childCount > 0)
             {
+                if(child1Active == true)
+                {
+                    child1.SetActive(false);
+                }
+                if(child2Active == true)
+                {
+                    child2.SetActive(false);
+                }
+                if(child3Active == true)
+                {
+                    child3.SetActive(false);
+                }
+                if(child4Active == true)
+                {
+                    child4.SetActive(false);
+                }
+                if(child5Active == true)
+                {
+                    child5.SetActive(false);
+                }
+                /*
                 child1.SetActive(false);
-            }
-            if(child2Active == true)
-            {
                 child2.SetActive(false);
-            }
-            if(child3Active == true)
-            {
                 child3.SetActive(false);
-            }
-            if(child4Active == true)
-            {
                 child4.SetActive(false);
+                child5.SetActive(false); */
             }
-            if(child5Active == true)
-            {
-                child5.SetActive(false);
-            }
-            /*
-            child1.SetActive(false);
-            child2.SetActive(false);
-            child3.SetActive(false);
-            child4.SetActive(false);
-            child5.SetActive(false); */
         }
     }
 

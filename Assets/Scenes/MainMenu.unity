@@ -1542,7 +1542,7 @@ MonoBehaviour:
     options and cards to mitigate/eliminate the attack. The main goal of CyberSim
     is to lose as little money to the security threats as possible by choosing the
     proper defenses in the form of cards. If you lose too much money, then it is
-    game over. \rOur simulation tools aims to not only broaden the user\u2019s experience
+    game over. \rOur simulation tool aims to not only broaden the user\u2019s experience
     in cybersecurity, but also expand the user\u2019s understanding of combating
     a multitude of security threats.\n"
 --- !u!222 &1172355392

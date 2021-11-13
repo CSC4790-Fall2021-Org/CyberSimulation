@@ -38,6 +38,8 @@ public class ChatManager : MonoBehaviour
     AudioSource correctAudio;
     AudioSource wrongAudio;
 
+    public Font myNewFont;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -149,6 +151,9 @@ public class ChatManager : MonoBehaviour
         chatObj.SetActive(true);
         ChatListObject clb = chatObj.GetComponent<ChatListObject>();
         fontSize = (int)(Screen.height * 0.03f);
+
+        //clb.parentText.font = myNewFont;
+
         clb.parentText.fontSize = fontSize;
         clb.childText.fontSize = fontSize;
         clb.parentText.text = msg;
