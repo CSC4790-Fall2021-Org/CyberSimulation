@@ -35,9 +35,14 @@ public class ChatManager : MonoBehaviour
 
     private VerticalLayoutGroup verticalLayoutGroup;
 
+    AudioSource correctAudio;
+    AudioSource wrongAudio;
+
     // Start is called before the first frame update
     void Start()
     {
+        correctAudio = GameObject.Find("Correct Sound").GetComponent<AudioSource>();
+        wrongAudio = GameObject.Find("Wrong Sound").GetComponent<AudioSource>();
         /*
         verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
@@ -217,11 +222,13 @@ public class ChatManager : MonoBehaviour
     {
         if (checkChoice == false)
         {
+            wrongAudio.Play(0);
             StartCoroutine(ShowMessageCoroutine(choiceA, 0));
             ShowMessages(choiceAChatTexts, 1);
             checkChoice = true;
             if (correctChoice == "A")
             {
+                correctAudio.Play(0);
                 choicecorrect = true;
             }
             Debug.Log("checkchoice = " + checkChoice);
@@ -233,11 +240,13 @@ public class ChatManager : MonoBehaviour
     {
         if (checkChoice == false)
         {
+            wrongAudio.Play(0);
             StartCoroutine(ShowMessageCoroutine(choiceB, 0));
             ShowMessages(choiceBChatTexts, 1);
             checkChoice = true;
             if (correctChoice == "B")
             {
+                correctAudio.Play(0);
                 choicecorrect = true;
             }
             Debug.Log("checkchoice = " + checkChoice);

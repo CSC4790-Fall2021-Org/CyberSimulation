@@ -132,6 +132,7 @@ public class DrawCardsV2 : MonoBehaviour
             child4.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);
             child5.gameObject.transform.localScale = new Vector3(0.67f, 0.67f, 0.67f);*/
 
+            //DrawCard1(0.5f);
             child1.SetActive(true);
             child2.SetActive(true);
             child3.SetActive(true);
@@ -229,4 +230,12 @@ public class DrawCardsV2 : MonoBehaviour
     {
 		//GameObject.Find("Chat Obj").GetComponent<Text>().font = myNewFont;
 	}
+
+    IEnumerator DrawCard1(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        child1.SetActive(true);
+        targetRect1 = child1.GetComponent<RectTransform>();
+    }
 }
