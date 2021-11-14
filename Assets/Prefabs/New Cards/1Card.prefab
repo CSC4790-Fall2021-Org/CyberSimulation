@@ -363,12 +363,17 @@ MonoBehaviour:
   description: {fileID: 3913987644692746674, guid: fce45b82812f0a941ba8798b3e6a8f4c,
     type: 3}
   cardBackIsActive: 1
-  ddrawc: []
+  text: 
   timer: 0
   canvas: {fileID: 7445875281149483475, guid: 48d18b007c8cecc4aa042cf7efc982ca, type: 3}
+  nameCard: 
   temp: {fileID: 0}
   a: 0
-  CardDescription: {fileID: 0}
+  ddrawc: []
+  ID: []
+  CardDescriptionParent: {fileID: 0}
+  CardDescription: {fileID: 2082130211024895998, guid: 6edc50135d2a7d24f84f2f3618892f84,
+    type: 3}
   drawCardsButton: {fileID: 0}
 --- !u!114 &1831204368944585665
 MonoBehaviour:

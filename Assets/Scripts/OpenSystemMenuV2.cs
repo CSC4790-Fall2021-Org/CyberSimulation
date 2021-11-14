@@ -122,10 +122,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
                 }
      
             }
-            for(int i = 0; i < cc.Length; i++)
-            {
-                
-            }
+           
             for (int i = 0; i < drawc.Count; i++)
             {
                 if (i <= drawc.Count - 1)

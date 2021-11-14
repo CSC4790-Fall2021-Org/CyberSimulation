@@ -105,16 +105,16 @@ eventList1.Loader = new loader[tableSize];
             chat[i] = eventList1.Loader[i].chat.Replace("COMMA", ",");
             choiceA[i] = eventList1.Loader[i].choiceA;
             choiceB[i] = eventList1.Loader[i].choiceB;
-            choiceAResult[i] = eventList1.Loader[i].choiceAResult.Replace("COMMA", ",").Replace("QUOTE", "\"");
-            choiceBResult[i] = eventList1.Loader[i].choiceBResult.Replace("COMMA", ",").Replace("QUOTE", "\"");
-            endRoundSum[i] = eventList1.Loader[i].endRoundSum.Replace("COMMA", ",").Replace("QUOTE", "\"");
+            choiceAResult[i] = eventList1.Loader[i].choiceAResult.Replace("COMMA", ","); //.Replace("QUOTE", "\"");
+            choiceBResult[i] = eventList1.Loader[i].choiceBResult.Replace("COMMA", ",");
+            endRoundSum[i] = eventList1.Loader[i].endRoundSum.Replace("COMMA", ",");
             choicecorrect[i] = eventList1.Loader[i].choicecorrect;
-            thirtythree[i] = eventList1.Loader[i].thirtythree.Replace("COMMA", ",").Replace("QUOTE", "\"");
-            sixtysix[i] = eventList1.Loader[i].sixtysix.Replace("COMMA", ",").Replace("QUOTE", "\"");
-            ninety[i] = eventList1.Loader[i].ninety.Replace("COMMA", ",").Replace("QUOTE", "\"");
+            thirtythree[i] = eventList1.Loader[i].thirtythree.Replace("COMMA", ",");
+            sixtysix[i] = eventList1.Loader[i].sixtysix.Replace("COMMA", ",");
+            ninety[i] = eventList1.Loader[i].ninety.Replace("COMMA", ",");
             threatmoney[i] = eventList1.Loader[i].threatmoney;
-            SystemInitial[i] = eventList1.Loader[i].SystemInitial.Replace("COMMA", ",").Replace("QUOTE", "\"");
-            systemCorrect[i] = eventList1.Loader[i].systemCorrect.Replace("COMMA", ",").Replace("QUOTE", "\"");
+            SystemInitial[i] = eventList1.Loader[i].SystemInitial.Replace("COMMA", ",");
+            systemCorrect[i] = eventList1.Loader[i].systemCorrect.Replace("COMMA", ",");
 
 
         }

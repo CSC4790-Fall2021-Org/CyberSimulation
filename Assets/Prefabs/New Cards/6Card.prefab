@@ -337,6 +337,7 @@ MonoBehaviour:
   money: 100
   moneyText: {fileID: 0}
   cardMoney: 0
+  drawCardsButton: {fileID: 0}
 --- !u!114 &7576114523874652466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,11 +369,18 @@ MonoBehaviour:
   cardBack: {fileID: 5002098335568166473}
   description: {fileID: 0}
   cardBackIsActive: 1
-  ddrawc: []
+  text: 
   timer: 0
   canvas: {fileID: 0}
+  nameCard: 
   temp: {fileID: 0}
   a: 0
+  ddrawc: []
+  ID: []
+  CardDescriptionParent: {fileID: 0}
+  CardDescription: {fileID: 2082130211024895998, guid: 6edc50135d2a7d24f84f2f3618892f84,
+    type: 3}
+  drawCardsButton: {fileID: 0}
 --- !u!114 &7576114523874652468
 MonoBehaviour:
   m_ObjectHideFlags: 0

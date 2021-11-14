@@ -4,22 +4,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+
 public class FlipCard : MonoBehaviour
 {
     public float x,y,z;
 
     public GameObject cardBack;
-    public TextMeshProUGUI description;
+    public Text description;
+    public Text name;
+    public Image image;
     public bool cardBackIsActive;
-    public string[] ddrawc;
+   
+    public string text;
     public int timer;
     public Canvas canvas;
+    public string nameCard;
     public Canvas temp;
     public bool a = false;
+    public List<string> ddrawc;
+    public List<string> ID;
 
     public GameObject CardDescriptionParent;
     public GameObject CardDescription;
-
+    public GameObject Description;
+    public GameObject Name;
+    public GameObject Imagee;
     public GameObject drawCardsButton;
 
     // Start is called before the first frame update
@@ -29,6 +39,23 @@ public class FlipCard : MonoBehaviour
         drawCardsButton = GameObject.Find("Draw Cards Button");
         CardDescriptionParent = GameObject.Find("Card Descriptions");
         CardDescription = CardDescriptionParent.transform.Find("Card Window").gameObject;
+        Description = CardDescription.transform.Find("desc").gameObject;
+        Name = CardDescription.transform.Find("name").gameObject;
+        description = Description.GetComponent<Text>();
+        Imagee = CardDescription.transform.Find("CardImage").gameObject;
+        image = Imagee.GetComponent<Image>();
+        name = Name.GetComponent<Text>();
+        ddrawc = new List<string>(10);
+        ID = new List<string>(10);
+        for (int i = 0; i < GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription.Length; i++)
+        {
+            //Debug.Log("sssss2e213 " + i);
+            ddrawc.Add(GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription[i]);
+            //Debug.Log("sssss2e213 " + ddrawc[i]);
+            ID.Add(GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardName[i]);
+        }
+
+
     }
     public void popup(Canvas canvas)
     {
@@ -82,33 +109,67 @@ public class FlipCard : MonoBehaviour
             RectTransform targetRect3 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect3;
             RectTransform targetRect4 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect4;
             RectTransform targetRect5 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect5;
-
+            
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect1, mousePos))
             {
+                string temp = "";
+             
+                nameCard = child1.GetComponent<CardDisplay>().nameText.text;
+                Debug.Log("namecard" + nameCard);
+
+                int d = ID.IndexOf(nameCard);
+              //  image = child1.GetComponent<Image>();
+                Debug.Log("d" + d);
+               description.text = ddrawc[d];
+                name.text = ID[d];
                 CardDescription.SetActive(true);
                 drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
             }
 
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect2, mousePos))
             {
+                nameCard = child2.GetComponent<CardDisplay>().nameText.text;
+                Debug.Log("namecard" + nameCard);
+                int d = ID.IndexOf(nameCard);
+                Debug.Log("d" + d);
+                name.text = ID[d];
+                description.text = ddrawc[d];
                 CardDescription.SetActive(true);
                 drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
             }
 
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect3, mousePos))
             {
+                nameCard = child3.GetComponent<CardDisplay>().nameText.text;
+                Debug.Log("namecard" + nameCard);
+                int d = ID.IndexOf(nameCard);
+                Debug.Log("d" + d);
+                name.text = ID[d];
+                description.text = ddrawc[d];
                 CardDescription.SetActive(true);
                 drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
             }
 
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect4, mousePos))
             {
+                nameCard = child4.GetComponent<CardDisplay>().nameText.text;
+                Debug.Log("namecard" + nameCard);
+                int d = ID.IndexOf(nameCard);
+                Debug.Log("d" + d);
+                name.text = ID[d];
+                description.text = ddrawc[d];
                 CardDescription.SetActive(true);
                 drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
             }
 
             if (RectTransformUtility.RectangleContainsScreenPoint(targetRect5, mousePos))
             {
+                nameCard = child5.GetComponent<CardDisplay>().nameText.text;
+                Debug.Log("namecard" + nameCard);
+                int d = ID.IndexOf(nameCard);
+                Debug.Log("d" + d);
+                name.text = ID[d];
+                description.text = ddrawc[d];
                 CardDescription.SetActive(true);
                 drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
             }
