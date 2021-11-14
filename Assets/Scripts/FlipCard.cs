@@ -48,6 +48,12 @@ public class FlipCard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 mousePos = Input.mousePosition;
+        {
+            //Debug.Log("X: " + mousePos.x);
+            //Debug.Log("Y: " + mousePos.y);
+            //Debug.Log(mousePos.ToString());
+        }
 
         if(Input.GetMouseButtonDown(1))
         {
@@ -64,8 +70,50 @@ public class FlipCard : MonoBehaviour
             Debug.Log("in flip + temp " + tempp);
             */
 
-            CardDescription.SetActive(true);
-            drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
+            GameObject originalGameObject = GameObject.Find("PlayerArea");
+            GameObject child1 = drawCardsButton.GetComponent<DrawCardsV2>().child1;
+            GameObject child2 = drawCardsButton.GetComponent<DrawCardsV2>().child2;
+            GameObject child3 = drawCardsButton.GetComponent<DrawCardsV2>().child3;
+            GameObject child4 = drawCardsButton.GetComponent<DrawCardsV2>().child4;
+            GameObject child5 = drawCardsButton.GetComponent<DrawCardsV2>().child5;
+
+            RectTransform targetRect1 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect1;
+            RectTransform targetRect2 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect2;
+            RectTransform targetRect3 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect3;
+            RectTransform targetRect4 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect4;
+            RectTransform targetRect5 = drawCardsButton.GetComponent<DrawCardsV2>().targetRect5;
+
+            if (RectTransformUtility.RectangleContainsScreenPoint(targetRect1, mousePos))
+            {
+                CardDescription.SetActive(true);
+                drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
+            }
+
+            if (RectTransformUtility.RectangleContainsScreenPoint(targetRect2, mousePos))
+            {
+                CardDescription.SetActive(true);
+                drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
+            }
+
+            if (RectTransformUtility.RectangleContainsScreenPoint(targetRect3, mousePos))
+            {
+                CardDescription.SetActive(true);
+                drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
+            }
+
+            if (RectTransformUtility.RectangleContainsScreenPoint(targetRect4, mousePos))
+            {
+                CardDescription.SetActive(true);
+                drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
+            }
+
+            if (RectTransformUtility.RectangleContainsScreenPoint(targetRect5, mousePos))
+            {
+                CardDescription.SetActive(true);
+                drawCardsButton.GetComponent<DrawCardsV2>().inChatManager = true;
+            }
+
+
         }
     }
     public void closee(Canvas canvas)
