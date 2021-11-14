@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.6568, y: 67.144}
+  m_AnchoredPosition: {x: -16.8, y: 67.144}
   m_SizeDelta: {x: 164.3782, y: 98.893}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7576114521804763374
@@ -368,6 +368,8 @@ MonoBehaviour:
   z: 0
   cardBack: {fileID: 5002098335568166473}
   description: {fileID: 0}
+  name: {fileID: 0}
+  image: {fileID: 0}
   cardBackIsActive: 1
   text: 
   timer: 0
@@ -380,7 +382,12 @@ MonoBehaviour:
   CardDescriptionParent: {fileID: 0}
   CardDescription: {fileID: 2082130211024895998, guid: 6edc50135d2a7d24f84f2f3618892f84,
     type: 3}
+  Description: {fileID: 0}
+  Name: {fileID: 0}
+  Imagee: {fileID: 0}
   drawCardsButton: {fileID: 0}
+  windowMoney: {fileID: 0}
+  windowMoneyText: 
 --- !u!114 &7576114523874652468
 MonoBehaviour:
   m_ObjectHideFlags: 0
