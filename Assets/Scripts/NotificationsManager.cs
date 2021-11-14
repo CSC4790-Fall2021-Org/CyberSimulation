@@ -12,6 +12,7 @@ public class NotificationsManager : MonoBehaviour
     private Queue<string> sentences;
     private CSVScript ob;
     public EventManage managetemp;
+    public string desc;
     // Update is called once per frame
     void Start()
     {   
@@ -19,7 +20,7 @@ public class NotificationsManager : MonoBehaviour
         sentences = new Queue<string>();
 
     }
-    public void StartNotifications (Notifications dialogue)
+    public void StartNotifications ()
     {
 
        int scenario =  EventManage.Instance.getScenario();
@@ -27,45 +28,26 @@ public class NotificationsManager : MonoBehaviour
 
         if (GameObject.Find("ChatManager").GetComponent<ChatManager>().choicecorrect == false)
         {
-            dialogue.sentence = new string[GameObject.Find("System").GetComponent<CSVScript>().SystemInitial.Length];
-            for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().SystemInitial.Length; i++)
-            {
-                dialogue.sentence[i] = GameObject.Find("System").GetComponent<CSVScript>().SystemInitial[EventManage.Instance.getcurrScenario()];
+            //dialogue.sentence = new string[GameObject.Find("System").GetComponent<CSVScript>().SystemInitial.Length];
+            
+               desc = GameObject.Find("System").GetComponent<CSVScript>().SystemInitial[EventManage.Instance.getcurrScenario()];
+            notificationText.text = desc;
 
-
-                Debug.Log("swag" + dialogue.sentence[i]);
-            }
+                Debug.Log("swag1" + desc);
+            
         }
         else
         {
-            dialogue.sentence = new string[GameObject.Find("System").GetComponent<CSVScript>().systemCorrect.Length];
-            for (int i = 0; i < GameObject.Find("System").GetComponent<CSVScript>().systemCorrect.Length; i++)
-            {
-                dialogue.sentence[i] = GameObject.Find("System").GetComponent<CSVScript>().systemCorrect[EventManage.Instance.getcurrScenario()];
+            desc = GameObject.Find("System").GetComponent<CSVScript>().systemCorrect[EventManage.Instance.getcurrScenario()];
+            notificationText.text = desc;
+          
 
 
-                Debug.Log("swag" + dialogue.sentence[i]);
-            }
+                
         }
-        foreach (string sentence in dialogue.sentence)
-        {
-           sentences.Enqueue (sentence);
-
-        }
-      
-        DisplayNextSentence();
+        
+    
     }
-    public void DisplayNextSentence()
-    {
-        if (sentences.Count == 0)
-        {
-            EndDialogue();
-        }
-        string sentence = sentences.Dequeue();
-        notificationText.text = sentence;
-    }
-    void EndDialogue()
-    {
-
-    }
+  
+ 
 }

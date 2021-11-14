@@ -8,7 +8,7 @@ public class NotificationTrigger : MonoBehaviour
     public Notifications dialogue;
     public void TriggerNotifications()
     {
-        FindObjectOfType<NotificationsManager>().StartNotifications(dialogue);
+        FindObjectOfType<NotificationsManager>().StartNotifications();
         
     }
 }
