@@ -157,17 +157,17 @@ public class OpenSystemMenuV2 : MonoBehaviour
 
             if (nine == true)
             {
-                threatmoney = threatmoney * 0.9;
+                threatmoney = threatmoney * 0.1;
 
 
             }
             if (sixty == true && nine != true)
             {
-                threatmoney = threatmoney * 0.66;
+                threatmoney = threatmoney * 0.33;
             }
             if (sixty == true && nine != true && thirty != true)
             {
-                threatmoney = threatmoney * 0.33;
+                threatmoney = threatmoney * 0.66;
             }
             nine = false;
             thirty = false;

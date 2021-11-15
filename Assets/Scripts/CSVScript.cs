@@ -102,7 +102,7 @@ eventList1.Loader = new loader[tableSize];
 
             
             ID[i] = eventList1.Loader[i].ID;
-            chat[i] = eventList1.Loader[i].chat.Replace("COMMA", ",").Replace("QUOTE", "\"").Replace("COLON", ":").Replace("SLASH", "\\").Replace("DASH", "-"); ;
+            chat[i] = eventList1.Loader[i].chat.Replace("COMMA", ",").Replace("QUOTE", "\"").Replace("COLON", ":").Replace("SLASH", "\\").Replace("DASH", "-");
             choiceA[i] = eventList1.Loader[i].choiceA.Replace("COMMA", ",").Replace("QUOTE", "\"").Replace("COLON", ":").Replace("SLASH", "\\").Replace("DASH", "-");
             choiceB[i] = eventList1.Loader[i].choiceB.Replace("COMMA", ",").Replace("QUOTE", "\"").Replace("COLON", ":").Replace("SLASH", "\\").Replace("DASH", "-");
             choiceAResult[i] = eventList1.Loader[i].choiceAResult.Replace("COMMA", ",").Replace("QUOTE", "\"").Replace("COLON", ":").Replace("SLASH", "\\").Replace("DASH", "-");  //.Replace("QUOTE", "\"");
