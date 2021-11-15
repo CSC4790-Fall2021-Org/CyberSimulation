@@ -15,7 +15,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public bool ended = false;
     public string final;
     public int diff;
-    public int threatmoney;
+    public double threatmoney;
     bool thirty;
     bool sixty;
     bool nine;
@@ -124,7 +124,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
                 if ((Array.IndexOf(tempvar2, drawc[i]) != -1))
                 {
                     cardindex = Array.IndexOf(tempvar2, drawc[i]);
-                    cc[cardcounter] = cardindex;
+                    cc[cardcounter] = cardindex+1;
                     Debug.Log("cardcount " + cardindex);
                     Debug.Log("cc " + cc[cardcounter]);
                     cardcounter++;
@@ -157,17 +157,17 @@ public class OpenSystemMenuV2 : MonoBehaviour
 
             if (nine == true)
             {
-                threatmoney = (int)((double)threatmoney * 0.9);
+                threatmoney = threatmoney * 0.9;
 
 
             }
             if (sixty == true && nine != true)
             {
-                threatmoney = (int)((double)threatmoney * 0.66);
+                threatmoney = threatmoney * 0.66;
             }
             if (sixty == true && nine != true && thirty != true)
             {
-                threatmoney = (int)((double)threatmoney * 0.33);
+                threatmoney = threatmoney * 0.33;
             }
             nine = false;
             thirty = false;

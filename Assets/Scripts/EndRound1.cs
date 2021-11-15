@@ -32,14 +32,14 @@ public class EndRound1 : MonoBehaviour
 
         string tt = OpenSystemMenuV2.Instance.final;
         SumText = GameObject.Find("System").GetComponent<CSVScript>().endRoundSum[EventManage.Instance.getcurrScenario()];
-        int ttt = System.Math.Abs(OpenSystemMenuV2.Instance.diff) + System.Math.Abs(OpenSystemMenuV2.Instance.threatmoney);
+        double ttt = System.Math.Abs(OpenSystemMenuV2.Instance.diff) + System.Math.Abs(OpenSystemMenuV2.Instance.threatmoney);
         string temp = ttt.ToString();
 
         
         ff = OpenSystemMenuV2.Instance.final + " \n and you have lost $" +ttt + " in total and lost $" + OpenSystemMenuV2.Instance.threatmoney+ " to the threat" + "\n";
         SummaryText.text = ff+SumText;
         //        GameObject.Find("Money").GetComponent<Text>().text = "100";
-        int fff = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+        double fff = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
         fff = fff-OpenSystemMenuV2.Instance.threatmoney;
         GameObject.Find("Money").GetComponent<Text>().text = fff.ToString();
 
