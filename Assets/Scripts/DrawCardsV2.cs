@@ -71,6 +71,8 @@ public class DrawCardsV2 : MonoBehaviour
     public GameObject CardDescriptionParent;
     public GameObject CardDescription;
 
+    public GameObject dayEndRound;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -99,6 +101,7 @@ public class DrawCardsV2 : MonoBehaviour
         originalGameObject = GameObject.Find("PlayerArea");
 
         GameObject.Find("Day Number").GetComponent<Text>().text = "1";
+        dayEndRound.GetComponent<Text>().text = "1";
 
         dayText = GameObject.Find("Day Number").GetComponent<Text>();
         dayNum = int.Parse(GameObject.Find("Day Number").GetComponent<Text>().text);
@@ -219,6 +222,10 @@ public class DrawCardsV2 : MonoBehaviour
         if (EventManage.Instance.nextRound() == true)
         {
             Debug.Log("Child count:" + originalGameObject.transform.childCount);
+            //dayEndRound.GetComponent<Text>().text = "1";
+
+            dayEndRound.GetComponent<Text>().text = dayText.text;
+
             Invoke("ShuffleNoise", 0.5f);
 
             while (originalGameObject.transform.childCount != 0)
