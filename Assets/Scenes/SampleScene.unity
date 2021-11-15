@@ -363,7 +363,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 1
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -373.16693, y: -132.33722, z: -349.41992, w: -227.34851}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1661,7 +1661,7 @@ MonoBehaviour:
   cardint: []
   cardcounter: 0
   cardindex: 0
-  cc: []
+  cc: 
   drawCardsButton: {fileID: 0}
 --- !u!4 &332359357
 Transform:
@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34ff49b5089fbe44aa863e0a360119d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextAssetData: {fileID: 4900000, guid: 040722ccbdad2664b9f8f276e3f8e8e6, type: 3}
+  TextAssetData: {fileID: 4900000, guid: 39351c5fb629e9b45ae128eaba7d20a5, type: 3}
   ID: 
   chat: []
   choiceA: []

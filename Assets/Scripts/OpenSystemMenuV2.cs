@@ -16,7 +16,9 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public string final;
     public int diff;
     public int threatmoney;
- 
+    bool thirty;
+    bool sixty;
+    bool nine;
     public List<int> thirtt;
     public List<int> sixtysix;
     public List<int> ninety;
@@ -26,12 +28,12 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public int dollars;
     List<string> drawc;
     public List<string> ddrawc;
-    public string[] intdrawc;
+    public List<string> intdrawc;
     public int initialDollars;
     public string[] cardint;
     public int cardcounter;
     public int cardindex;
-    public string[] cc;
+    public int[] cc;
     public GameObject drawCardsButton;
 
     void Start()
@@ -43,25 +45,29 @@ public class OpenSystemMenuV2 : MonoBehaviour
     {
         a = GameObject.Find("popupEndRound").GetComponent<OpenSystemMenu>().a;
 
-        if (a == true&&EventManage.Instance.nextRound()==true)
+        if (a == true && EventManage.Instance.nextRound() == true)
         {
             money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
             moneyText1 = GameObject.Find("Money").GetComponent<Text>();
             dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
-           
-             drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
+
+            drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
             ddrawc = new List<string>(10);
-        
+
             for (int i = 0; i < GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription.Length; i++)
             {
                 //Debug.Log("sssss2e213 " + i);
-                ddrawc.Add (GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription[i]);
+                ddrawc.Add(GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardDescription[i]);
                 //Debug.Log("sssss2e213 " + ddrawc[i]);
 
             }
-        
-            intdrawc= GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardName;
 
+            string[] tempvar2 = GameObject.Find("Ex").GetComponent<CSVScriptCard>().cardName;
+
+            for (int i = 0; i < tempvar2.Length; i++)
+            {
+                intdrawc.Add(tempvar2[i]);
+            }
 
             //   drawc[1] = ", " + drawc[1];
             initialDollars = drawCardsButton.GetComponent<DrawCardsV2>().initialMoney;
@@ -71,58 +77,102 @@ public class OpenSystemMenuV2 : MonoBehaviour
             canvas.enabled = true;
             threatmoney = GameObject.Find("System").GetComponent<CSVScript>().threatmoney[EventManage.Instance.getcurrScenario()];
             string temp = GameObject.Find("System").GetComponent<CSVScript>().thirtythree[EventManage.Instance.getcurrScenario()];
+
             string[] values = temp.Split(",".ToCharArray());
 
-           thirtt = new List<int>();
+            thirtt = new List<int>();
 
-            for(int i = 0; i < values.Length; i++)
+            for (int i = 0; i < values.Length; i++)
             {
                 thirtt.Add(int.Parse(values[i]));
-                Debug.Log("ss " + values[i]);
+                Debug.Log("ss1 " + values[i]);
             }
 
             temp = GameObject.Find("System").GetComponent<CSVScript>().sixtysix[EventManage.Instance.getcurrScenario()];
             values = temp.Split(",".ToCharArray());
 
-             sixtysix = new List<int>();
+            sixtysix = new List<int>();
 
             for (int i = 0; i < values.Length; i++)
             {
                 sixtysix.Add(int.Parse(values[i]));
-                Debug.Log("ss " + values[i]);
+                Debug.Log("ss2 " + values[i]);
             }
 
             temp = GameObject.Find("System").GetComponent<CSVScript>().ninety[EventManage.Instance.getcurrScenario()];
-             values = temp.Split(",".ToCharArray());
+            values = temp.Split(",".ToCharArray());
 
-           ninety = new List<int>();
+            ninety = new List<int>();
 
             for (int i = 0; i < values.Length; i++)
             {
-                ninety.Add( int.Parse(values[i]));
-                Debug.Log("ss " + values[i]);
+                ninety.Add(int.Parse(values[i]));
+                Debug.Log("ss3 " + values[i]);
             }
-           
 
-            
-            for(int i = 0; i < drawc.Count; i++)
+
+
+            for (int i = 0; i < drawc.Count; i++)
             {
-          // if()
+                // if()
             }
             cardcounter = 0;
-            cc = new string[10];
+            cc = new int[10];
             cardindex = 0;
-            for (int i = 0; i < intdrawc.Length; i++)
+            for (int i = 0; i < drawc.Count; i++)
             {
-                if ((drawc.FindIndex(a => a.Contains(intdrawc[i])) != -1)){
-                    cardindex = drawc.FindIndex(a => a.Contains(intdrawc[i]));
-                    cc[cardcounter] = intdrawc[i];
+                if ((Array.IndexOf(tempvar2, drawc[i]) != -1))
+                {
+                    cardindex = Array.IndexOf(tempvar2, drawc[i]);
+                    cc[cardcounter] = cardindex;
                     Debug.Log("cardcount " + cardindex);
+                    Debug.Log("cc " + cc[cardcounter]);
                     cardcounter++;
                 }
-     
+
             }
-           
+            Debug.Log("got here!");
+            for (int i = 0; i < cc.Length; i++)
+            {
+                if (thirtt.Contains(cc[i]))
+                {
+                    Debug.Log("bool thirt" + thirty);
+                    thirty = true;
+                    Debug.Log("bool thirt" + thirty);
+                }
+                if (sixtysix.Contains(cc[i]))
+                {
+                    Debug.Log("bool 6" + sixty);
+                    sixty = true;
+                    Debug.Log("bool 6" + sixty);
+                }
+                if (ninety.Contains(cc[i]))
+                {
+                    Debug.Log("nine" + nine);
+                    nine = true;
+                    Debug.Log("nine" + nine);
+                }
+                Debug.Log("cc inside " + cc[i]);
+            }
+
+            if (nine == true)
+            {
+                threatmoney = (int)((double)threatmoney * 0.9);
+
+
+            }
+            if (sixty == true && nine != true)
+            {
+                threatmoney = (int)((double)threatmoney * 0.66);
+            }
+            if (sixty == true && nine != true && thirty != true)
+            {
+                threatmoney = (int)((double)threatmoney * 0.33);
+            }
+            nine = false;
+            thirty = false;
+            sixty = false;
+
             for (int i = 0; i < drawc.Count; i++)
             {
                 if (i <= drawc.Count - 1)
@@ -142,8 +192,9 @@ public class OpenSystemMenuV2 : MonoBehaviour
 
 
         }
-      
     }
+      
+    
     public void popdown()
     {
   

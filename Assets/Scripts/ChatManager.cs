@@ -83,7 +83,9 @@ public class ChatManager : MonoBehaviour
             correctChoice = "";
             choicecorrect = false;
         }
+        Debug.Log("choiceccorrect index" + EventManage.Instance.getcurrScenario());
         correctChoice = GameObject.Find("System").GetComponent<CSVScript>().choicecorrect[EventManage.Instance.getcurrScenario()];
+
                verticalLayoutGroup = content.GetComponent<VerticalLayoutGroup>();
         chatCanvas.enabled = false;
         initialChatTexts = new string[1];

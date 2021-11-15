@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
     public void qq()
     {
-        if (EventManage.Instance.currScenario == 10)
+        if (EventManage.Instance.currScenario == 7)
         {
             QuitGame();
         }

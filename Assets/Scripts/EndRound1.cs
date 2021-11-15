@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,12 +32,16 @@ public class EndRound1 : MonoBehaviour
 
         string tt = OpenSystemMenuV2.Instance.final;
         SumText = GameObject.Find("System").GetComponent<CSVScript>().endRoundSum[EventManage.Instance.getcurrScenario()];
-        string temp = OpenSystemMenuV2.Instance.diff.ToString();
+        int ttt = System.Math.Abs(OpenSystemMenuV2.Instance.diff) + System.Math.Abs(OpenSystemMenuV2.Instance.threatmoney);
+        string temp = ttt.ToString();
 
         
-        ff = OpenSystemMenuV2.Instance.final + " \n and you have lost $" +temp.Substring(1,temp.Length-1) + "\n";
+        ff = OpenSystemMenuV2.Instance.final + " \n and you have lost $" +ttt + " in total and lost $" + OpenSystemMenuV2.Instance.threatmoney+ " to the threat" + "\n";
         SummaryText.text = ff+SumText;
-     
+        //        GameObject.Find("Money").GetComponent<Text>().text = "100";
+        int fff = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+        fff = fff-OpenSystemMenuV2.Instance.threatmoney;
+        GameObject.Find("Money").GetComponent<Text>().text = fff.ToString();
 
         if (EventManage.Instance.currScenario == 7)
         {
