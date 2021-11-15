@@ -186,7 +186,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
             {
                 final = final + drawc[i];
             }
-            Debug.Log("fina l is " + final);
+            Debug.Log("fina l is " + dollars + "initial "+ initialDollars);
             diff = dollars - initialDollars;
             EventManage.Instance.incrementScenario();
 
