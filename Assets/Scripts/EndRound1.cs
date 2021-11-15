@@ -35,12 +35,8 @@ public class EndRound1 : MonoBehaviour
         double ttt = System.Math.Abs(OpenSystemMenuV2.Instance.diff) + System.Math.Abs(OpenSystemMenuV2.Instance.threatmoney);
         string temp = ttt.ToString();
 
-        if (int.Parse(GameObject.Find("Money").GetComponent<Text>().text) < 0)
-        {
-            SummaryText.text = "GAME OVER";
-        }
-        else
-        {
+       
+        
             Debug.Log("in lost rn" + OpenSystemMenuV2.Instance.diff);
             ff = OpenSystemMenuV2.Instance.final + " \n and you have lost $" + ttt + " in total and lost $" + OpenSystemMenuV2.Instance.threatmoney + " to the threat" + "\n";
             SummaryText.text = ff + SumText;
@@ -48,7 +44,12 @@ public class EndRound1 : MonoBehaviour
             double fff = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
             fff = fff - OpenSystemMenuV2.Instance.threatmoney;
             GameObject.Find("Money").GetComponent<Text>().text = fff.ToString();
+
+        if (int.Parse(GameObject.Find("Money").GetComponent<Text>().text) < 0)
+        {
+            SummaryText.text = "GAME OVER";
         }
+
         if (EventManage.Instance.currScenario == 6)
         {
             SummaryText.text = "Congratulations! You have made it to the end. You have $" + GameObject.Find("Money").GetComponent<Text>().text + " left!";

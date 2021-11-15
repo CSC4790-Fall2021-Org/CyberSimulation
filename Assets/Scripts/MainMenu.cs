@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class MainMenu : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -15,7 +17,7 @@ public class MainMenu : MonoBehaviour
     }
     public void qq()
     {
-        if (EventManage.Instance.currScenario == 7)
+        if (EventManage.Instance.currScenario == 6 || int.Parse(GameObject.Find("Money").GetComponent<Text>().text)<0)
         {
             QuitGame();
         }
