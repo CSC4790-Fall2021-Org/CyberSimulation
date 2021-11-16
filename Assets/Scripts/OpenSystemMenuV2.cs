@@ -23,9 +23,9 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public List<int> sixtysix;
     public List<int> ninety;
 
-    public int money;
+    public double money;
     public Text moneyText1;
-    public int dollars;
+    public double dollars;
     List<string> drawc;
     public List<string> ddrawc;
     public List<string> intdrawc;
@@ -47,9 +47,9 @@ public class OpenSystemMenuV2 : MonoBehaviour
 
         if (a == true && EventManage.Instance.nextRound() == true)
         {
-            money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+            money = double.Parse(GameObject.Find("Money").GetComponent<Text>().text);
             moneyText1 = GameObject.Find("Money").GetComponent<Text>();
-            dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+            dollars = double.Parse(GameObject.Find("Money").GetComponent<Text>().text);
 
             drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
             ddrawc = new List<string>(10);
