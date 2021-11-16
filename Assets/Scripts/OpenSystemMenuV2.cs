@@ -14,7 +14,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public bool b = false;
     public bool ended = false;
     public string final;
-    public int diff;
+    public double diff;
     public double threatmoney;
     bool thirty;
     bool sixty;
