@@ -240,7 +240,7 @@ public class DrawCardsV2 : MonoBehaviour
             dayEndRound.GetComponent<Text>().text = dayText.text;
 
             Invoke("ShuffleNoise", 0.5f);
-            
+
             while (originalGameObject.transform.childCount != 0)
             {
                 foreach (Transform child in originalGameObject.transform)

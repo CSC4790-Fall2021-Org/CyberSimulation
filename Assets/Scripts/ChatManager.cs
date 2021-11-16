@@ -152,7 +152,8 @@ public class ChatManager : MonoBehaviour
         chatObj.transform.SetParent(content.transform, false);
         chatObj.SetActive(true);
         ChatListObject clb = chatObj.GetComponent<ChatListObject>();
-        fontSize = (int)(Screen.height * 0.03f);
+        //fontSize = (int)(Screen.height * 0.03f);
+        fontSize = 23;
 
         //clb.parentText.font = myNewFont;
 
