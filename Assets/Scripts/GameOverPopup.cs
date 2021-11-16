@@ -8,11 +8,23 @@ using UnityEngine.UI;
 public class GameOverPopup : MonoBehaviour
 {
     public GameObject GameOver;
+    public GameObject WinScreen;
+    public GameObject EndScreen;
+    public GameObject drawCardsButton;
+
+    AudioSource gameTheme;
+
+    public GameObject dayGameOver;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        drawCardsButton = GameObject.Find("Draw Cards Button");
+        EndScreen = GameObject.Find("EndRound");
+
+        gameTheme = GameObject.Find("Background Music").GetComponent<AudioSource>();
+
+        dayGameOver.GetComponent<Text>().text = "1";
     }
 
     // Update is called once per frame
@@ -20,7 +32,23 @@ public class GameOverPopup : MonoBehaviour
     {
         if (int.Parse(GameObject.Find("Money").GetComponent<Text>().text) < 1)
         {
+            drawCardsButton.GetComponent<DrawCardsV2>().canShuffle = false;
+
+            gameTheme.Pause();
+
+            dayGameOver.GetComponent<Text>().text = GameObject.Find("Day Number").GetComponent<Text>().text;
+
+            Invoke("OpenGameOver()", 1);
             GameOver.SetActive(true);
+            EndScreen.SetActive(false);
+        }
+
+        if(drawCardsButton.GetComponent<DrawCardsV2>().dayNum > 6)
+        {
+            gameTheme.Pause();
+
+            Invoke("OpenWin()", 1);
+            WinScreen.SetActive(true);
         }
     }
 
@@ -32,5 +60,10 @@ public class GameOverPopup : MonoBehaviour
     public void CloseGameOver()
     {
         GameOver.SetActive(false);
+    }
+
+    public void OpenWin()
+    {
+        WinScreen.SetActive(true);
     }
 }
