@@ -15,6 +15,13 @@ public class GameOverPopup : MonoBehaviour
     AudioSource gameTheme;
 
     public GameObject dayGameOver;
+    public GameObject winMoney;
+
+    AudioSource winSound;
+    AudioSource loseSound;
+
+    public bool canPlayWin;
+    public bool canPlayLoss;
 
     // Start is called before the first frame update
     void Start()
@@ -23,8 +30,14 @@ public class GameOverPopup : MonoBehaviour
         EndScreen = GameObject.Find("EndRound");
 
         gameTheme = GameObject.Find("Background Music").GetComponent<AudioSource>();
+        winSound = GameObject.Find("Win Sound").GetComponent<AudioSource>();
+        loseSound = GameObject.Find("Lose Sound").GetComponent<AudioSource>();
 
         dayGameOver.GetComponent<Text>().text = "1";
+        winMoney.GetComponent<Text>().text = "50";
+
+        canPlayWin = true;
+        canPlayLoss = true;
     }
 
     // Update is called once per frame
@@ -35,6 +48,12 @@ public class GameOverPopup : MonoBehaviour
             drawCardsButton.GetComponent<DrawCardsV2>().canShuffle = false;
 
             gameTheme.Pause();
+            
+            if(canPlayLoss == true)
+            {
+                loseSound.Play();
+                canPlayLoss = false;
+            }
 
             dayGameOver.GetComponent<Text>().text = GameObject.Find("Day Number").GetComponent<Text>().text;
 
@@ -46,6 +65,14 @@ public class GameOverPopup : MonoBehaviour
         if(drawCardsButton.GetComponent<DrawCardsV2>().dayNum > 6)
         {
             gameTheme.Pause();
+
+            if(canPlayWin == true)
+            {
+                winSound.Play();
+                canPlayWin = false;
+            }
+
+            winMoney.GetComponent<Text>().text = GameObject.Find("Money").GetComponent<Text>().text;
 
             Invoke("OpenWin()", 1);
             WinScreen.SetActive(true);
