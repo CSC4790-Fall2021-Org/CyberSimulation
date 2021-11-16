@@ -67,7 +67,7 @@ public class EventManage : MonoBehaviour
     }
     public int getcurrScenario()
     {
-        return scenariosTemp[currScenario];
+        return scenariosTemp[currScenario] - 1;
     }
     public bool nextRound()
     {

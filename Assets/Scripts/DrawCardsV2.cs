@@ -142,6 +142,13 @@ public class DrawCardsV2 : MonoBehaviour
             canGetCards = false;
             lastCardDrawn = false;
 
+            if(firstChatClick == true)
+            {
+                firstChatClick = false;
+
+                initialMoney = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+            }
+
             Debug.Log("List Size: " + cards.Count);
             while(cards.Count < 5)
             {
