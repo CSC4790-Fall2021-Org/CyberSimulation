@@ -45,7 +45,7 @@ public class EndRound1 : MonoBehaviour
             fff = fff - OpenSystemMenuV2.Instance.threatmoney;
             GameObject.Find("Money").GetComponent<Text>().text = fff.ToString();
 
-        if (int.Parse(GameObject.Find("Money").GetComponent<Text>().text) < 0)
+        if (double.Parse(GameObject.Find("Money").GetComponent<Text>().text) < 0)
         {
             SummaryText.text = "GAME OVER";
         }
