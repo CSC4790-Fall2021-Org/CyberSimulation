@@ -187,7 +187,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
                     Debug.Log("used cards " + drawc[i]);
                 }
             }
-            final = "You selected the following cards:";
+            final = "Cards Selected: ";
             for (int i = 0; i < drawc.Count; i++)
             {
                 final = final + drawc[i];
