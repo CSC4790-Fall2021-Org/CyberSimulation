@@ -14,8 +14,8 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public bool b = false;
     public bool ended = false;
     public string final;
-    public double diff;
-    public double threatmoney;
+    public int diff;
+    public int threatmoney;
     bool thirty;
     bool sixty;
     bool nine;
@@ -23,9 +23,9 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public List<int> sixtysix;
     public List<int> ninety;
 
-    public double money;
+    public int money;
     public Text moneyText1;
-    public double dollars;
+    public int dollars;
     List<string> drawc;
     public List<string> ddrawc;
     public List<string> intdrawc;
@@ -47,9 +47,9 @@ public class OpenSystemMenuV2 : MonoBehaviour
 
         if (a == true && EventManage.Instance.nextRound() == true)
         {
-            money = double.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+            money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
             moneyText1 = GameObject.Find("Money").GetComponent<Text>();
-            dollars = double.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+            dollars = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
 
             drawc = drawCardsButton.GetComponent<DrawCardsV2>().usedCardsNames;
             ddrawc = new List<string>(10);
@@ -157,17 +157,23 @@ public class OpenSystemMenuV2 : MonoBehaviour
 
             if (nine == true)
             {
-                threatmoney = threatmoney * 0.1;
+                double thrat = threatmoney;
+                thrat = thrat * .1;
+                threatmoney = (int)thrat;
 
 
             }
             if (sixty == true && nine != true)
             {
-                threatmoney = threatmoney * 0.33;
+                double thrat = threatmoney;
+                thrat = thrat * .33;
+                threatmoney = (int)thrat;
             }
             if (sixty == true && nine != true && thirty != true)
             {
-                threatmoney = threatmoney * 0.66;
+                double thrat = threatmoney;
+                thrat = thrat * .66;
+                threatmoney = (int)thrat;
             }
             nine = false;
             thirty = false;

@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
     }
     public void qq()
     {
-        if (EventManage.Instance.currScenario == 6 || double.Parse(GameObject.Find("Money").GetComponent<Text>().text)<0)
+        if (EventManage.Instance.currScenario == 6 || int.Parse(GameObject.Find("Money").GetComponent<Text>().text)<0)
         {
             QuitGame();
         }
