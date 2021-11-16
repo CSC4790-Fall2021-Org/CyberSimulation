@@ -73,6 +73,8 @@ public class DrawCardsV2 : MonoBehaviour
 
     public GameObject dayEndRound;
 
+    public bool firstChatClick = true;
+
     // Start is called before the first frame update
     void Start()
     {   
@@ -110,11 +112,14 @@ public class DrawCardsV2 : MonoBehaviour
         cardShuffleAudio = GameObject.Find("ShuffleCards").GetComponent<AudioSource>();
 
         CardDescriptionParent = GameObject.Find("Card Descriptions");
+        
+        firstChatClick = true;
     }
 
     public void NewDay()
     {
         canGetCards = true;
+        firstChatClick = true;
 
         dayNum++;
         dayText.text = dayNum.ToString();
@@ -136,8 +141,6 @@ public class DrawCardsV2 : MonoBehaviour
         {
             canGetCards = false;
             lastCardDrawn = false;
-
-            initialMoney = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
 
             Debug.Log("List Size: " + cards.Count);
             while(cards.Count < 5)
@@ -514,6 +517,16 @@ public class DrawCardsV2 : MonoBehaviour
     public void ShuffleNoise()
     {
         cardShuffleAudio.Play(0);
+    }
+
+    public void SetInitialMoney()
+    {
+        if(firstChatClick == true)
+        {
+            firstChatClick = false;
+
+            initialMoney = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
+        }
     }
 
 }

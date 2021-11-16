@@ -38,7 +38,7 @@ public class EndRound1 : MonoBehaviour
        
         
             Debug.Log("in lost rn" + OpenSystemMenuV2.Instance.diff);
-            ff = OpenSystemMenuV2.Instance.final + " \n and you have lost $" + ttt + " in total and lost $" + OpenSystemMenuV2.Instance.threatmoney + " to the threat" + "\n";
+            ff = OpenSystemMenuV2.Instance.final + " \nYou have lost $" + ttt + " in total, including $" + OpenSystemMenuV2.Instance.threatmoney + " to the threat" + "\n";
             SummaryText.text = ff + SumText;
             //        GameObject.Find("Money").GetComponent<Text>().text = "100";
             double fff = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
