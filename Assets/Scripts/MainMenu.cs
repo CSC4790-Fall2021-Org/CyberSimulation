@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     {
         if (EventManage.Instance.currScenario == 6 || int.Parse(GameObject.Find("Money").GetComponent<Text>().text)<0)
         {
-            QuitGame();
+            //QuitGame();
         }
     }
 }

@@ -850,7 +850,7 @@ PrefabInstance:
     - target: {fileID: 1010079138589841633, guid: 1a91cdaa4a64b5548815dc1ff0a11faa,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00036621094
+      value: -0.00024414062
       objectReference: {fileID: 0}
     - target: {fileID: 1010079138672712680, guid: 1a91cdaa4a64b5548815dc1ff0a11faa,
         type: 3}
@@ -6435,6 +6435,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7456450033796721469, guid: 599410d1fe585420fb066964ba7c4183,
         type: 3}
+      propertyPath: m_Text
+      value: '10000
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456450033796721469, guid: 599410d1fe585420fb066964ba7c4183,
+        type: 3}
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: f37abb88f761e4927b0eafa967f96faf,
@@ -6540,7 +6547,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.205017, y: -30}
+  m_AnchoredPosition: {x: 12.205078, y: -30}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532256123
