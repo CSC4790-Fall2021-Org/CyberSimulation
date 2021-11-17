@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: Periodically Scan Software
   ciaAspect: C
   artwork: {fileID: 21300000, guid: cbf144c91bea44d74b6c36d416a40777, type: 3}
-  moneyValue: 10
+  moneyValue: 200

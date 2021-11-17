@@ -15,4 +15,4 @@ MonoBehaviour:
   cardName: Install Antivirus Software
   ciaAspect: A
   artwork: {fileID: 21300000, guid: cbf144c91bea44d74b6c36d416a40777, type: 3}
-  moneyValue: 4
+  moneyValue: 1000
