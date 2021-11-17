@@ -160,18 +160,20 @@ public class OpenSystemMenuV2 : MonoBehaviour
                 double thrat = threatmoney;
                 thrat = thrat * .1;
                 threatmoney = (int)thrat;
-
+                Debug.Log("inside ninety");
 
             }
             if (sixty == true && nine != true)
             {
                 double thrat = threatmoney;
+                Debug.Log("inside 66");
                 thrat = thrat * .33;
                 threatmoney = (int)thrat;
             }
-            if (sixty == true && nine != true && thirty != true)
+            if (thirty == true && nine != true && sixty != true)
             {
                 double thrat = threatmoney;
+                Debug.Log("inside thirty");
                 thrat = thrat * .66;
                 threatmoney = (int)thrat;
             }
