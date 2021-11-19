@@ -9,3 +9,6 @@ Instructions on how to build and execute the code:
  - Click on the "Add" button in Unity Hub and naviagate to the folder you downloaded  
  - Double click on the project name to launch it  
 
+Controls:
+Left-click to interact with the various menu buttons
+Right-click on the cards to view their descriptions
