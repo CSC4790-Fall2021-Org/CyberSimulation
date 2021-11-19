@@ -10,5 +10,5 @@ Instructions on how to build and execute the code:
  - Double click on the project name to launch it  
 
 Controls:
-Left-click to interact with the various menu buttons
+Left-click to interact with the various menu buttons. 
 Right-click on the cards to view their descriptions
