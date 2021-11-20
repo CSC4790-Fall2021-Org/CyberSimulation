@@ -8,6 +8,7 @@ Instructions on how to build and execute the code:
  - Download Unity Hub and Unity game engine 2020.2.5f1  
  - Click on the "Add" button in Unity Hub and naviagate to the folder you downloaded  
  - Double click on the project name to launch it  
+ - Click the play button at the top to begin the game
 
 Controls:
 Left-click to interact with the various menu buttons. 
