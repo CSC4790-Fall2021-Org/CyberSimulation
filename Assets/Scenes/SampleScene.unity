@@ -5356,7 +5356,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New cards can only be drawn once per day. Once a card is clicked, it cannot
-    be used again in this playthrough
+    be used again in this playthrough.
 --- !u!222 &1066425421
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5569,8 +5569,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -347.48, y: -226.75}
-  m_SizeDelta: {x: 785.5059, y: 704.4358}
+  m_AnchoredPosition: {x: -364, y: -270}
+  m_SizeDelta: {x: 882.9317, y: 1100.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129468836
 MonoBehaviour:
@@ -5605,8 +5605,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Each attack has at least 3 associated cards that will minizimize the money
+  m_Text: Each attack has at least 3 associated cards that will minimize the money
     lost at end of the day. Correct cards will reduce the money lost from 30% - 90%.
+    Choosing multiple beneficial cards will not stack their effectiveness; only pick
+    1 card per round.
 --- !u!222 &1129468837
 CanvasRenderer:
   m_ObjectHideFlags: 0
