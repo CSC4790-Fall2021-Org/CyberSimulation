@@ -32,6 +32,7 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public int initialDollars;
     public string[] cardint;
     public int cardcounter;
+    public bool ff;
     public int cardindex;
     public int[] cc;
     public GameObject drawCardsButton;
@@ -44,8 +45,8 @@ public class OpenSystemMenuV2 : MonoBehaviour
     public void popup()
     {
         a = GameObject.Find("popupEndRound").GetComponent<OpenSystemMenu>().a;
-
-        if (a == true && EventManage.Instance.nextRound() == true)
+       ff =drawCardsButton.GetComponent<DrawCardsV2>().lastCardDrawn;
+        if (a == true && EventManage.Instance.nextRound() == true && (ff== true))
         {
             money = int.Parse(GameObject.Find("Money").GetComponent<Text>().text);
             moneyText1 = GameObject.Find("Money").GetComponent<Text>();
